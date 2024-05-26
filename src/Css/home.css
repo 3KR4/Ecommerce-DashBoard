@@ -1,0 +1,114 @@
+/*! ============= DachBoard ============= */
+
+.dashboard {
+  
+}
+.dashboard .top .holder {
+  display: flex;
+  gap: 30px;
+}
+.dashboard .top .holder .chart {
+  width: 45%;
+}
+.apexcharts-legend-text{
+  color: var(--paragraph) !important;
+}
+.dashboard .top .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  width: 55%;
+}
+.dashboard .top .card {
+  background: var(--section-color);
+  padding: 28px 25px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+  justify-content: space-between;
+}
+.dashboard .top .card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow);
+}
+.dashboard .top .card .text {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.dashboard .top .card:nth-child(1) .icon svg,
+.dashboard .top .card:nth-child(1) .CircularProgressbar-path {
+  color: #f47560;
+  stroke: #f47560 !important;
+}
+.dashboard .top .card:nth-child(2) .icon svg ,
+.dashboard .top .card:nth-child(2) .CircularProgressbar-path {
+  color: #1f77b4;
+  stroke: #1f77b4 !important;
+}
+.dashboard .top .card:nth-child(3) .icon svg ,
+.dashboard .top .card:nth-child(3) .CircularProgressbar-path {
+  color: #7fc97f;
+  stroke: #7fc97f !important;
+}
+.dashboard .top .card:nth-child(4) .icon svg ,
+.dashboard .top .card:nth-child(4) .CircularProgressbar-path {
+  color: #f1e15b;
+  stroke: #f1e15b !important;
+}
+.dashboard .top .card svg {
+  width: 38%;
+}
+.dashboard .top .card .text svg {
+  color: white;
+  font-size: 40px;
+  margin-bottom: 5px;
+  transform: translateX(-9px);
+}
+.dashboard .top .card:first-child svg {
+  font-size: 45px;
+}
+.dashboard .top .card:last-child svg {
+  font-size: 38px;
+}
+.dashboard .top .card h2 {
+  margin: 2px 0;
+}
+.dashboard .top .card p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-transform: capitalize;
+}
+.dashboard .top .card p span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fa587d;
+}
+
+.CircularProgressbar-path {
+  stroke: var(--text-color) !important;
+  stroke-width: 6px !important;
+}
+.CircularProgressbar-trail {
+  stroke-width: 6px !important;
+  stroke: #4b4a4a !important;
+}
+body.light .CircularProgressbar-trail {
+  stroke: var(--section-color2) !important;
+}
+.CircularProgressbar-text {
+  fill: var(--text-color) !important ;
+  transform: translateY(1px);
+}
+
+
+
+/*! =============== Media Quere ============== */
+
+@media (max-width: 1600px) {
+  .dashboard .top .cards {
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  }
+}
