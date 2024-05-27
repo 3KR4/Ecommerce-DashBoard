@@ -24,7 +24,6 @@ export const cardsData = [
     svg: FaUserPlus,
   },
 ];
-
 export const categories = [
   {
     id: "hardware",
@@ -332,7 +331,6 @@ export const categories = [
     ],
   },
 ];
-
 export const brands = [
   {
     id: "nvidia",

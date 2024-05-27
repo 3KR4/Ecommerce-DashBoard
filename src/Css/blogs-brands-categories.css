@@ -1,0 +1,190 @@
+.head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.head .sectionTitle {
+  margin-bottom: 0;
+}
+.head a {
+  width: fit-content;
+  padding: 0 12px;
+  transform: translateY(-5px);
+}
+.megaMenu,
+.brands {
+  gap: 25px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(251px, 1fr));
+  cursor: initial;
+}
+.card {
+  background: var(--section-color);
+  padding: 15px 29px 12px;
+  border-radius: 10px;
+}
+.card ul {
+  margin-top: 18px;
+}
+
+.card .title img {
+  width: 100px;
+  height: 90px;
+  object-fit: contain;
+}
+.title {
+  position: relative;
+  color: var(--main-color);
+  text-transform: capitalize;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brands-page .title {
+  margin-top: -27px;
+}
+.title .actions {
+  display: flex;
+  transform: translateX(10px);
+}
+.title .actions svg {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.title .actions svg:first-child:hover {
+  color: rgb(229, 229, 229);
+  background: #3085d6;
+}
+.title .actions svg:last-child:hover {
+  color: rgb(229, 229, 229);
+  background: #ce3431;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+  width: 108%;
+  height: 2px;
+  background: var(--main-color);
+}
+.brands-page .title::after {
+  bottom: 13px;
+}
+.card ul li {
+  text-transform: capitalize;
+  padding: 8px 0;
+  transition: 0.3s;
+  font-size: 16px;
+}
+.brands-page .card {
+  width: 100%;
+  height: fit-content;
+  border-radius: 8px;
+  padding: 15px 29px 5px;
+  overflow: hidden;
+}
+.brands-page .card ul {
+  height: 0px;
+  visibility: hidden;
+  opacity: 0;
+  transition: .3s;
+  margin-top: -3px;
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+.brands-page .card.active ul {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+  transition: .4s;
+  margin-top: -8px;
+  height: fit-content;
+}
+.brands-page .card .angle {
+  position: relative;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 2px 3px 1px;
+  transform: translateX(-50%);
+}
+.brands-page .card .angle:hover {
+  background: var(--section-color2);
+  padding: 4px 5px 2px;
+}
+.brands-page .card.active .angle {
+  rotate: 180deg;
+  padding: 4px 5px 2px;
+  transform: translateX(10px);
+}
+.create-brand .bigHolder {
+  width: 50%;
+}
+.create-brand .bigHolder .holder {
+  width: 100% !important;
+}
+.create-brand .uploadlabel img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: contain;
+}
+.create-brand .productImages {
+  height: 350px;
+}
+
+
+
+.addBlogPage .specificHolder {
+  width: 100%;
+}
+.addBlogPage .inputHolder textarea {
+  font-size: 16px;
+  padding: 18px 19px;
+}
+
+.addBlogPage .inputHolder textarea::placeholder {
+  font-weight: 400;
+}
+.addBlogPage .specificHolder .inputHolder {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.addBlogPage .specificHolder .inputHolder input:first-child {
+  width: 95%;
+  height: 45px;
+}
+.addBlogPage .specificHolder textarea {
+  height: 100px !important;
+  padding: 18px 12px !important;
+}
+.addBlogPage .specificHolder {
+  width: 100%;
+}
+.addBlogPage form button.remove {
+  position: absolute;
+  right: 16px;
+  top: 13px;
+}
+.addBlogPage .productImages {
+  height: 427px;
+  max-height: 595px;
+}
+.addBlogPage .productImages img {
+  width: 100%;
+  height: 100%;
+  padding: 7px;
+  object-fit: contain;
+  border-radius: 10px;
+}

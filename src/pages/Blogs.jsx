@@ -1,3 +1,4 @@
+import '../Css/blogs-brands-categories.css'
 import { useState, useEffect, useRef } from "react";
 import { useForm, useFieldArray, Controller } from 'react-hook-form';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -35,10 +36,6 @@ const Blogs = () => {
     if (imageFile) {
       setImage(imageFile);
     }
-  };
-
-  const handleRemoveImage = () => {
-    setImage(null);
   };
 
   const handleDragOver = (e) => {
@@ -229,7 +226,7 @@ const Blogs = () => {
             onDragOver={handleDragOver}
           >
             {image ? (
-                <img src={URL.createObjectURL(image)} alt={image.name} width="150" />
+                <img src={URL.createObjectURL(image)} alt={image.name}  />
             ) : (
               <>
                 <CloudUploadIcon style={{color: !image && isSubmited ? '#F43621E6' : '#f2c23d',}}/>

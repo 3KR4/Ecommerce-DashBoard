@@ -409,70 +409,10 @@ form button.remove:hover {
   margin-top: 7px;
 }
 
-.addBlogPage .specificHolder {
-  width: 100%;
-}
-.addBlogPage .inputHolder textarea {
-  font-size: 16px;
-  padding: 18px 19px;
-}
-
 .inputHolder textarea:not(:placeholder-shown),
 .inputHolder textarea:focus  {
   padding: 26px 19px 0 !important;
 }
-.addBlogPage .inputHolder textarea::placeholder {
-  font-weight: 400;
-}
-.addBlogPage .specificHolder .inputHolder {
-  flex-direction: column;
-  align-items: flex-start;
-}
-.addBlogPage .specificHolder .inputHolder input:first-child {
-  width: 95%;
-  height: 45px;
-}
-.addBlogPage .specificHolder textarea {
-  height: 100px !important;
-  padding: 18px 12px !important;
-}
-.addBlogPage .specificHolder {
-  width: 100%;
-}
-.addBlogPage form button.remove {
-  position: absolute;
-  right: 16px;
-  top: 13px;
-}
-.addBlogPage .productImages {
-  height: 427px;
-  max-height: 595px;
-}
-.addBlogPage .productImages img {
-  width: 100%;
-  height: 100%;
-  padding: 7px;
-  object-fit: contain;
-  border-radius: 10px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

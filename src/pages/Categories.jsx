@@ -1,4 +1,4 @@
-import '../Css/categories.css'
+import '../Css/blogs-brands-categories.css'
 import React, { useState } from 'react'
 import { FaAngleDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -17,7 +17,7 @@ export default function Categories () {
       </div>
       <div className="megaMenu">
         {categories.map((category) => (
-          <div className="category" key={category.id}>
+          <div className="card" key={category.id}>
             <div className='title'>
               {category.id}
               
@@ -26,7 +26,7 @@ export default function Categories () {
                   <RiDeleteBin6Line/>
                 </div>
             </div>
-            <ul className='types'>
+            <ul>
               {category.list.map((item) => (
                 <li key={item.id}>{item.id}</li>
               ))}
