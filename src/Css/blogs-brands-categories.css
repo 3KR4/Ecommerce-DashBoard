@@ -61,7 +61,7 @@
 }
 .title .actions svg:first-child:hover {
   color: rgb(229, 229, 229);
-  background: #3085d6;
+  background: #3085d6 !important;
 }
 .title .actions svg:last-child:hover {
   color: rgb(229, 229, 229);
@@ -129,10 +129,12 @@
   padding: 4px 5px 2px;
   transform: translateX(10px);
 }
-.create-brand .bigHolder {
+.create-brand .bigHolder,
+.create-categories .bigHolder {
   width: 50%;
 }
-.create-brand .bigHolder .holder {
+.create-brand .bigHolder .holder,
+.create-categories .bigHolder .holder {
   width: 100% !important;
 }
 .create-brand .uploadlabel img {
@@ -140,9 +142,7 @@
   max-height: 380px;
   object-fit: contain;
 }
-.create-brand .productImages {
-  height: 350px;
-}
+
 
 
 
@@ -177,14 +177,67 @@
   right: 16px;
   top: 13px;
 }
-.addBlogPage .productImages {
-  height: 427px;
+.addBlogPage .productImages,
+.create-categories .productImages,
+.create-brand  .productImages {
+  height: 360px;
   max-height: 595px;
 }
-.addBlogPage .productImages img {
+.addBlogPage .productImages img,
+.create-categories .productImages img,
+.create-brand  .productImages img {
   width: 100%;
   height: 100%;
   padding: 7px;
   object-fit: contain;
   border-radius: 10px;
+}
+.create-category .typesHolder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.create-category .typeHolder {
+  width: 49.4%;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.create-category .specificHolder {
+  width: 100% !important;
+  padding-right: 15px;
+}
+.create-category .specificHolder .inputHolder {
+  flex-direction: row;
+}
+.create-category .inputHolder .holder {
+  display: flex;
+  align-items: center;
+}
+.create-category .inputHolder .holder input {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+.create-category .inputHolder .holder .remove {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 56px;
+  border-radius: 0;
+  font-size: 23px;
+}
+.create-category .inputHolder .holder .remove svg {
+  color:var(--body-color);
+}
+.create-category form .formHolder {
+  width: 75%;
+}
+.create-category .specificHolder .inputHolder .remove {
+  margin-left: 4px;
+}
+.create-category form .formHolder > .inputHolder {
+  width: 60.6%;
 }

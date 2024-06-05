@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import App from './App';
 import DashBoard from './pages/DashBoard';
 import Products from './pages/Products';
+import CreateProducts from './pages/Create/CreateProducts';
 import Blogs from './pages/Blogs';
 import Categories from './pages/Categories';
 import CreateCategories from './pages/Create/CreateCategories';
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route path="/" element={<App />}>
           <Route index element={<DashBoard />} />
           <Route path="/products" element={<Products />} />
+          <Route path="/products/create" element={<CreateProducts />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/brands/create" element={<CreateBrand />} />

@@ -30,7 +30,6 @@ export const categories = [
     list: [
       { 
         id: "graphic card",
-        img: require('../img/Categories/gpu.png'),
         specific: {
           series: ['rtx 2000','rtx 3000','rtx 4000','rx 5000', 'rx 6000'],
           memory: ['2gb','4gb','6gb','8gb','12gb','16gb','24gb']
@@ -476,5 +475,249 @@ export const brands = [
     id: "zotac",
     img: require('../img/brands/zotac.png'),
     produce: ["graphic card", "motherboard"]
+  },
+];
+export const allProducts = [
+  {
+    id: 1,
+    type: "mouse",
+    category: "accessories",
+    name: "XPG INFAREX M10",
+    price: 26.00,
+    sale: 16,
+    reviews: 4,
+    stock: 5,
+    stars: 4.5,
+    brand: 'xpg',
+    Images: [require('../img/xpg.png'), require('../img/xpg2.png'), require('../img/xpg3.png'), require('../img/xpg4.png'), require('../img/xpg5.png')],
+    tags: ['asdasdasdasdad', 'asdasdasxasdasdad', 'asasdasdxxxdasdasdasdad', 'asdasdaasdasd asda cxvad', 'asdaszxczxczxcdasdasdaasd aSdZXcd'],
+    details:"ASUS TUF Gaming VG289Q1A 28” Monitor, 4K UHD (3840 x 2160), IPS, Adaptive-Sync/ FreeSync, Eye Care, DisplayPort HDMI, DCI-P3 HDR 10, Shadow Boost, Black.",
+    about: "Interface: USB Type-A\nSwitch: Mechanical Switches with 20-Million clicks rating\nDPI: 400/800/1600/3200/6400/12000\nWarranty: 2 Year Limited",
+    specifications: {
+      'Product Dimensions':'5.04 x 3.07 x 1.57 inches',
+      'Item Weight':'3.49 ounces',
+      'ASIN':'B0B5BDSPFD',
+      'Item model number':'ALPHAWL-BKCWW',
+      'Batteries':'1 Lithium Polymer batteries required. (included)',
+      'Best Sellers Rank':'#165,627 in Video Games asdasd asdasd (See Top 100 in Video Games)#5,903 in PC Gaming Mice',
+      'Date First Available':'June 28, 2022',
+      'Manufacturer':'ADATA',
+    },
+    testimonies: [
+      {
+        id: 1,
+        name: 'Mahmoud Elshazly',
+        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+        stars: 5,
+      },
+      {
+        id: 2,
+        name: 'Ahmed Hani',
+        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+        stars: 4.5,
+      },
+      {
+        id: 3,
+        name: 'Ahmed Shalapy',
+        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+        stars: 4,
+      },
+      {
+        id: 4,
+        name: 'Chalipha Mo3tasem',
+        details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+        stars: 3.5,
+      },
+    ],
+    Tags: ['Wired Mouse', '3200']
+  },
+  {
+    id: 2,
+    type: "motherboard",
+    category: "hardware",
+    name: "Asus Rog Strix Z790",
+    price: 390.00,
+    sale: 0,
+    reviews: 54,
+    stars: 3.5,
+    stock: 0,
+    brand: 'Asus',
+    Images: [require('../img/asus motherboard.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['DDR4', '3200 MHz']
+  },
+  {
+    id: 3,
+    type: "headphone",
+    category: "accessories",
+    name: "Logitech G PRO X",
+    price: 200.00,
+    sale: 15,
+    reviews: 12,
+    stars: 5.0,
+    stock: 13,
+    brand: 'Logitech',
+    Images: [require('../img/logi headphone.png'), require('../img/logi headphone.png'), require('../img/logi headphone.png'), require('../img/logi headphone.png'), require('../img/logi headphone.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['Gaming Headphone', 'Wired Headphone']
+  },
+  {
+    id: 4,
+    type: "monitor",
+    category: "monitor",
+    name: "Msi G244F24 170HZ",
+    price: 1240.00,
+    sale: 8,
+    reviews: 25,
+    stars: 3.5,
+    stock: 0,
+    brand: 'Msi',
+    Images: [require('../img/msi monitor.png'), require('../img/msi monitor.png'), require('../img/msi monitor.png'), require('../img/msi monitor.png'), require('../img/msi monitor.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['Gaming Monitor', '4K', '160hrz']
+  },
+  {
+    id: 5,
+    type: "m.2",
+    category: "hardware",
+    name: "AORUS NVMe Gen4",
+    price: 100.00,
+    sale: 3,
+    reviews: 75,
+    stars: 4.9,
+    stock: 22,
+    brand: 'AORUS',
+    Images: [require('../img/aorus nvme.png'), require('../img/aorus nvme.png'), require('../img/aorus nvme.png'), require('../img/aorus nvme.png'), require('../img/aorus nvme.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['NVMe Gen4', '500GB']
+  },
+  {
+    id: 6,
+    type: "chair",
+    category: "other",
+    name: "Cougar Outrider S",
+    price: 20.00,
+    sale: 9,
+    reviews: 105,
+    stars: 4.5,
+    stock: 3,
+    brand: 'Cougar',
+    Images: [require('../img/couger chair.png'), require('../img/couger chair.png'), require('../img/couger chair.png'), require('../img/couger chair.png'), require('../img/couger chair.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['Gaming Chair']
+  },
+  {
+    id: 7,
+    type: "joystick",
+    category: "accessories",
+    name: "ps4 controlar",
+    price: 30.00,
+    sale: 12,
+    reviews: 230,
+    stars: 5.0,
+    stock: 76,
+    brand: 'sony',
+    Images: [require('../img/ps4 controlar.png'), require('../img/ps4 controlar.png'), require('../img/ps4 controlar.png'), require('../img/ps4 controlar.png'), require('../img/ps4 controlar.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['PS4 Controller', 'Wireless Controller']
+  },
+  {
+    id: 8,
+    type: "watch",
+    category: "other",
+    name: "M75 Sport Watch",
+    price: 380.00,
+    sale: 7,
+    reviews: 12,
+    stars: 5.0,
+    stock: 34,
+    brand: '',
+    Images: [require('../img/watsh.png'), require('../img/watsh.png'), require('../img/watsh.png'), require('../img/watsh.png'), require('../img/watsh.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['Sport Watch', 'Waterproof']
+  },
+  {
+    id: 9,
+    type: "graphic card",
+    category: "hardware",
+    name: "Aorus 4060ti",
+    price: 350.00,
+    sale: 15,
+    reviews: 46,
+    stars: 4.3,
+    stock: 9,
+    brand: 'Aorus',
+    Images: [require('../img/rtx 4060ti.png'), require('../img/rtx 4060ti.png'), require('../img/rtx 4060ti.png'), require('../img/rtx 4060ti.png'), require('../img/rtx 4060ti.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['RTX 4000', '8GB']
+  },
+  {
+    id: 10,
+    type: "console",
+    category: "other",
+    name: "ps4 pro",
+    price: 290.00,
+    sale: 18,
+    reviews: 309,
+    stars: 5.0,
+    stock: 12,
+    brand: 'sony',
+    Images: [require('../img/Ps4.png'), require('../img/Ps4.png'), require('../img/Ps4.png'), require('../img/Ps4.png'), require('../img/Ps4.png')],
+    details:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    about:[
+      "Interface: USB Type-A",
+      "Switch: Mechanical Switches with 20-Million clicks rating",
+      "DPI: 400/800/1600/3200/6400/12000",
+      "Warranty: 2 Year Limited"
+    ],
+    Tags: ['PS4 Pro', '1TB']
   },
 ];

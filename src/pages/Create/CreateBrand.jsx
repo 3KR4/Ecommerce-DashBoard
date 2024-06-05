@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import { useParams } from 'react-router-dom'; // Import useParams
 import '../../Css/blogs-brands-categories.css';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
@@ -14,11 +13,10 @@ export default function CreateBrand() {
     register,
     handleSubmit,
     control,
-    setValue, // Import setValue to set form values
+    setValue,
     formState: { errors },
   } = useForm();
 
-  const priceRegex = /^\d+\.\d{2}$|^\d+\.\d{1}$|^\d+$/;
   const [image, setImage] = useState(null);
   const inputFileRef = useRef(null);
   const [isDrag, setIsDrag] = useState(false);
@@ -26,7 +24,6 @@ export default function CreateBrand() {
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState('');
 
-  console.log(edit)
 
   useEffect(() => {
     if (edit) {
@@ -34,9 +31,7 @@ export default function CreateBrand() {
       if (brandToEdit) {
         setValue('name', brandToEdit.id);
         setTags(brandToEdit.produce || []);
-        if (brandToEdit.img) {
           setImage(brandToEdit.img);
-        }
       }
     }
   }, [edit, setValue]);
@@ -83,7 +78,6 @@ export default function CreateBrand() {
       setTagInput('');
     }
   };
-
   const removeTag = (indexToRemove) => {
     setTags(tags.filter((_, index) => index !== indexToRemove));
   };
