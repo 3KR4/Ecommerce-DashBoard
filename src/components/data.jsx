@@ -24,6 +24,110 @@ export const cardsData = [
     svg: FaUserPlus,
   },
 ];
+export const landing = {
+  slides: [
+    {
+      id: 1,
+      img: require('../img/swiper1.png'),
+      link: 'https://www.google.com'
+    },
+    {
+      id: 2,
+      img: require('../img/swiper2.png'),
+      link: 'https://www.google.com'
+    },
+    {
+      id: 3,
+      img: require('../img/swiper3.png'),
+      link: 'https://www.google.com'
+    },
+    {
+      id: 4,
+      img: require('../img/swiper4.jpg'),
+      link: 'https://www.google.com'
+    },
+    {
+      id: 5,
+      img: require('../img/swiper5.png'),
+      link: 'https://www.google.com'
+    },
+    {
+      id: 6,
+      img: require('../img/swiper6.png'),
+      link: 'https://www.google.com'
+    },
+    {
+      id: 7,
+      img: require('../img/swiper7.jpg'),
+      link: 'https://www.google.com'
+    },
+  ],
+  section: [
+    {
+      id: 1,
+      img: require('../img/landing01.jpg'),
+      link: 'asd'
+    },
+    {
+      id: 2,
+      img: require('../img/landing01.jpg'),
+      link: 'asd'
+    },
+    {
+      id: 3,
+      img: require('../img/landing03.jpg'),
+      link: 'asd'
+    },
+    {
+      id: 4,
+      img: require('../img/landing04.jpg'),
+      link: 'asd'
+    },
+  ]
+}
+export const about = [
+  {
+    id: 1,
+    head: "About Us",
+    bodys: [
+      "We are a leading hardware store committed to providing the best products and services to our customers.",
+      "Our extensive range of products includes the latest in technology and hardware solutions."
+    ]
+  },
+  {
+    id: 2,
+    head: "Our Locations",
+    bodys: [
+      "Visit our main store located at 123 Hardware St, Tech City.",
+      "We also have branches in other major cities to serve you better."
+    ]
+  },
+  {
+    id: 3,
+    head: "After Sales Service",
+    bodys: [
+      "We offer comprehensive after-sales services including repairs and maintenance.",
+      "Our dedicated support team is always ready to assist you with any issues you may face."
+    ]
+  },
+  {
+    id: 4,
+    head: "Fast Shipping",
+    bodys: [
+      "Enjoy fast and reliable shipping on all orders.",
+      "We ensure that your products reach you in the shortest possible time."
+    ]
+  },
+  {
+    id: 5,
+    head: "Contact Numbers",
+    bodys: [
+      "Reach us at our customer support number: +123-456-7890.",
+      "For sales inquiries, call us at: +123-456-7891."
+    ]
+  }
+];
+
 export const categories = [
   {
     id: "hardware",
@@ -477,14 +581,14 @@ export const brands = [
     produce: ["graphic card", "motherboard"]
   },
 ];
-export const allProducts = [
+export const allProducts = [  
   {
     id: 1,
     type: "mouse",
     category: "accessories",
     name: "XPG INFAREX M10",
     price: 26.00,
-    sale: 16,
+    sale: 0,
     reviews: 4,
     stock: 5,
     stars: 4.5,
@@ -721,3 +825,1034 @@ export const allProducts = [
     Tags: ['PS4 Pro', '1TB']
   },
 ];
+export const blogs = [
+  {
+    id: 1,
+    title: 'Interesting  asdasdas dasda sdas dfact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem i asdas kjdaskj daskjld kjlas dkjlaskjdlas kjldjklasd kjlasd kljaskljd askljdjklasd kjlsadkljaskjldsakljdsakljdkjlsadkjlsadk jlsa asd asjk dkjas djkasd jkasd kjaskj daskjld kjlaskjdlasd asd as dpsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/swiper1.png'),
+    link: '',
+    tags: ['','',''],
+    comments: [
+      {
+        userId: 1,
+        name: 'John Doe',
+        details: 'Interesting fact about gaming consoles',
+        replys: [
+          {
+            userId: 2,
+            name: 'Jane Doe',
+            details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+            replys: [
+              {
+                userId: 3,
+                name: 'Alice',
+                details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Interesting fact about gaming consoles',
+              },
+              {
+                userId: 4,
+                name: 'Bob',
+                details: '44444444444444444444444444444444444444',
+              },
+            ],
+          },
+        ],
+      },
+      {
+        userId: 5,
+        name: 'Eve',
+        details: 'xxxxxxxxxxxx',
+        replys: [
+          {
+            userId: 601,
+            name: 'asdasdAD',
+            details: 'yyyyyyyyyyyyyyyyyyy',
+            replys: [
+              {
+                userId: 710,
+                name: 'Carasxc ol',
+                details: 'zzzzzzzzzzzzzzzzzzzzzzzzz',
+              },
+              {
+                userId: 845,
+                name: 'Davasdasdasdid',
+                details: 'wwwwwwwwwwwAS dASd SAd ASd ',
+              },
+            ],
+          },
+          {
+            userId: 6421,
+            name: 'Charlie',
+            details: 'yyyyyyyyyyyyyyyyyyy',
+            replys: [
+              {
+                userId: 74534,
+                name: 'Caraxc asdol',
+                details: 'zzzzzzzzzzzzzzzzzzzzzzzzz',
+              },
+              {
+                userId: 84564,
+                name: 'Dav xczxc id',
+                details: 'wwwwwwwwxafcas dASd ASd sadasd aswwwwwwwwwwww',
+              },
+            ],
+          },
+          {
+            userId: 671,
+            name: 'Charas dasxc lie',
+            details: 'yyyyyyyyyyyyyyyyyyy',
+            replys: [
+              {
+                userId: 704,
+                name: 'Car asxczx asDol',
+                details: 'zzzzzzzzzzzzzzzzzzzzzzzzz',
+              },
+              {
+                userId: 40415,
+                name: 'David AsDad A',
+                details: 'wsffffffffffffffffffffffffffffffwwwwww',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/swiper2.png'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+  {
+    id: 3,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/swiper3.png'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+  {
+    id: 4,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/swiper4.jpg'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+  {
+    id: 5,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/swiper5.png'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+  {
+    id: 6,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/swiper6.png'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+  {
+    id: 7,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/landing01.jpg'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+  {
+    id: 8,
+    title: 'Interesting fact about gaming consoles',
+    type: 'Gaming',
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    img: require('../img/landing02.jpg'),
+    link: '',
+    tags: ['','',''],
+    comments: [],
+  },
+];
+export const orders = [
+  {
+    id: 1,
+    cart: [
+      {
+        productId: 1,
+        productName: "XPG INFAREX M10",
+        productPrice: 26.00,
+        quantity: 2,
+        totalPrice: 52.00,
+        image: require('../img/xpg.png'),
+        category: "Accessories",
+        type: "Mouse",
+        sale: 5
+      },
+      {
+        productId: 3,
+        productName: "Logitech G PRO X",
+        productPrice: 200.00,
+        quantity: 1,
+        totalPrice: 200.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Headset",
+        sale: 10
+      }
+    ],
+    totalItems: 3,
+    cartTotalPrice: 242.00,
+    customer: {
+      id: 101,
+      name: "John Doe",
+      email: "john.doe@example.com",
+      phone: "123-456-7890",
+      address: {
+        street: "123 Main St",
+        city: "Cairo",
+        country: "Egypt"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Standard",
+      cost: 5.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-01T10:00:00Z",
+    notes: "Please leave the package at the front door if no one is home."
+  },
+  {
+    id: 2,
+    cart: [
+      {
+        productId: 2,
+        productName: "Asus Rog Strix Z790",
+        productPrice: 390.00,
+        quantity: 1,
+        totalPrice: 390.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "Motherboard",
+        sale: 15
+      },
+      {
+        productId: 4,
+        productName: "Msi G244F24 170HZ",
+        productPrice: 1240.00,
+        quantity: 1,
+        totalPrice: 1240.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Monitor",
+        type: "Gaming Monitor",
+        sale: 20
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 1555.00,
+    customer: {
+      id: 102,
+      name: "Jane Smith",
+      email: "jane.smith@example.com",
+      phone: "987-654-3210",
+      address: {
+        street: "456 Oak St",
+        city: "New York",
+        country: "USA"
+      }
+    },
+    payment: "PayPal",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-02T10:00:00Z",
+    notes: "Please call upon arrival."
+  },
+  {
+    id: 3,
+    cart: [
+      {
+        productId: 5,
+        productName: "AORUS NVMe Gen4",
+        productPrice: 100.00,
+        quantity: 3,
+        totalPrice: 300.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "M.2 SSD",
+        sale: 8
+      },
+      {
+        productId: 7,
+        productName: "ps4 controlar",
+        productPrice: 30.00,
+        quantity: 2,
+        totalPrice: 60.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Game Controller",
+        sale: 12
+      }
+    ],
+    totalItems: 5,
+    cartTotalPrice: 335.00,
+    customer: {
+      id: 103,
+      name: "Michael Johnson",
+      email: "michael.johnson@example.com",
+      phone: "555-123-4567",
+      address: {
+        street: "789 Elm St",
+        city: "Los Angeles",
+        country: "USA"
+      }
+    },
+    payment: "Debit Card",
+    shipping: {
+      method: "Standard",
+      cost: 7.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-03T10:00:00Z",
+    notes: "Leave package at reception if not available."
+  },
+  {
+    id: 4,
+    cart: [
+      {
+        productId: 6,
+        productName: "Cougar Outrider S",
+        productPrice: 20.00,
+        quantity: 1,
+        totalPrice: 20.00,
+        image: require('../img/xpg.png'),
+        category: "Other",
+        type: "Gaming Chair",
+        sale: 0
+      },
+      {
+        productId: 8,
+        productName: "M75 Sport Watch",
+        productPrice: 380.00,
+        quantity: 1,
+        totalPrice: 380.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Other",
+        type: "Sport Watch",
+        sale: 18
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 400.00,
+    customer: {
+      id: 104,
+      name: "Emily Brown",
+      email: "emily.brown@example.com",
+      phone: "321-555-9876",
+      address: {
+        street: "101 Pine St",
+        city: "Chicago",
+        country: "USA"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Standard",
+      cost: 5.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-04T10:00:00Z",
+    notes: "Please handle with care."
+  },
+  {
+    id: 5,
+    cart: [
+      {
+        productId: 9,
+        productName: "Aorus 4060ti",
+        productPrice: 350.00,
+        quantity: 2,
+        totalPrice: 700.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "Graphics Card",
+        sale: 5
+      },
+      {
+        productId: 10,
+        productName: "ps4 pro",
+        productPrice: 290.00,
+        quantity: 1,
+        totalPrice: 290.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Other",
+        type: "Gaming Console",
+        sale: 10
+      }
+    ],
+    totalItems: 3,
+    cartTotalPrice: 990.00,
+    customer: {
+      id: 105,
+      name: "David Wilson",
+      email: "david.wilson@example.com",
+      phone: "777-321-6543",
+      address: {
+        street: "246 Oak St",
+        city: "San Francisco",
+        country: "USA"
+      }
+    },
+    payment: "PayPal",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-05T10:00:00Z",
+    notes: "Handle with care. Fragile items inside."
+  },
+  {
+    id: 6,
+    cart: [
+      {
+        productId: 11,
+        productName: "Razer BlackWidow V3",
+        productPrice: 150.00,
+        quantity: 1,
+        totalPrice: 150.00,
+        image: require('../img/xpg.png'),
+        category: "Accessories",
+        type: "Gaming Keyboard",
+        sale: 15
+      },
+      {
+        productId: 13,
+        productName: "Corsair Vengeance RGB Pro",
+        productPrice: 80.00,
+        quantity: 2,
+        totalPrice: 160.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Hardware",
+        type: "RAM",
+        sale: 5
+      }
+    ],
+    totalItems: 3,
+    cartTotalPrice: 310.00,
+    customer: {
+      id: 106,
+      name: "Sarah Johnson",
+      email: "sarah.johnson@example.com",
+      phone: "555-987-6543",
+      address: {
+        street: "555 Maple Ave",
+        city: "Toronto",
+        country: "Canada"
+      }
+    },
+    payment: "Debit Card",
+    shipping: {
+      method: "Standard",
+      cost: 7.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-06T10:00:00Z",
+    notes: "Leave package with reception if not at home."
+  },
+  {
+    id: 7,
+    cart: [
+      {
+        productId: 14,
+        productName: "Samsung Odyssey G7",
+        productPrice: 800.00,
+        quantity: 1,
+        totalPrice: 800.00,
+        image: require('../img/xpg.png'),
+        category: "Monitor",
+        type: "Curved Gaming Monitor",
+        sale: 12
+      },
+      {
+        productId: 16,
+        productName: "SteelSeries Arctis 7",
+        productPrice: 150.00,
+        quantity: 1,
+        totalPrice: 150.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Wireless Headset",
+        sale: 8
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 950.00,
+    customer: {
+      id: 107,
+      name: "Emma Davis",
+      email: "emma.davis@example.com",
+      phone: "234-567-8901",
+      address: {
+        street: "789 Pine St",
+        city: "Vancouver",
+        country: "Canada"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-07T10:00:00Z",
+    notes: "Handle with care. Fragile items inside."
+  },
+  {
+    id: 8,
+    cart: [
+      {
+        productId: 17,
+        productName: "HyperX Cloud II",
+        productPrice: 90.00,
+        quantity: 2,
+        totalPrice: 180.00,
+        image: require('../img/xpg.png'),
+        category: "Accessories",
+        type: "Gaming Headset",
+        sale: 15
+      },
+      {
+        productId: 19,
+        productName: "Seagate BarraCuda 2TB",
+        productPrice: 60.00,
+        quantity: 1,
+        totalPrice: 60.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Hardware",
+        type: "Hard Drive",
+        sale: 5
+      }
+    ],
+    totalItems: 3,
+    cartTotalPrice: 240.00,
+    customer: {
+      id: 108,
+      name: "James Wilson",
+      email: "james.wilson@example.com",
+      phone: "456-789-0123",
+      address: {
+        street: "222 Elm St",
+        city: "London",
+        country: "UK"
+      }
+    },
+    payment: "PayPal",
+    shipping: {
+      method: "Standard",
+      cost: 5.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-08T10:00:00Z",
+    notes: "Leave package with reception if not at home."
+  },
+  {
+    id: 9,
+    cart: [
+      {
+        productId: 20,
+        productName: "Nintendo Switch",
+        productPrice: 300.00,
+        quantity: 1,
+        totalPrice: 300.00,
+        image: require('../img/xpg.png'),
+        category: "Other",
+        type: "Gaming Console",
+        sale: 10
+      },
+      {
+        productId: 22,
+        productName: "Apple AirPods Pro",
+        productPrice: 250.00,
+        quantity: 1,
+        totalPrice: 250.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Wireless Earbuds",
+        sale: 0
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 550.00,
+    customer: {
+      id: 109,
+      name: "Sophia Martinez",
+      email: "sophia.martinez@example.com",
+      phone: "987-654-3210",
+      address: {
+        street: "456 Maple Ave",
+        city: "Los Angeles",
+        country: "USA"
+      }
+    },
+    payment: "Debit Card",
+    shipping: {
+      method: "Standard",
+      cost: 7.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-09T10:00:00Z",
+    notes: "Signature required upon delivery."
+  },
+  {
+    id: 10,
+    cart: [
+      {
+        productId: 23,
+        productName: "Logitech G502 HERO",
+        productPrice: 60.00,
+        quantity: 3,
+        totalPrice: 180.00,
+        image: require('../img/xpg.png'),
+        category: "Accessories",
+        type: "Gaming Mouse",
+        sale: 8
+      },
+      {
+        productId: 25,
+        productName: "LG UltraGear 27GN950-B",
+        productPrice: 1500.00,
+        quantity: 1,
+        totalPrice: 1500.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Monitor",
+        type: "4K Gaming Monitor",
+        sale: 10
+      }
+    ],
+    totalItems: 4,
+    cartTotalPrice: 1680.00,
+    customer: {
+      id: 110,
+      name: "Liam Garcia",
+      email: "liam.garcia@example.com",
+      phone: "555-321-0987",
+      address: {
+        street: "789 Oak St",
+        city: "San Francisco",
+        country: "USA"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-10T10:00:00Z",
+    notes: "Fragile items inside. Handle with care."
+  },
+  {
+    id: 11,
+    cart: [
+      {
+        productId: 26,
+        productName: "AMD Ryzen 7 5800X",
+        productPrice: 400.00,
+        quantity: 1,
+        totalPrice: 400.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "Processor",
+        sale: 15
+      },
+      {
+        productId: 28,
+        productName: "Corsair K95 RGB Platinum XT",
+        productPrice: 180.00,
+        quantity: 1,
+        totalPrice: 180.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Mechanical Keyboard",
+        sale: 0
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 580.00,
+    customer: {
+      id: 111,
+      name: "Olivia Brown",
+      email: "olivia.brown@example.com",
+      phone: "321-987-6543",
+      address: {
+        street: "333 Pine St",
+        city: "Seattle",
+        country: "USA"
+      }
+    },
+    payment: "PayPal",
+    shipping: {
+      method: "Standard",
+      cost: 5.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-11T10:00:00Z",
+    notes: "Leave package with reception if not at home."
+  },
+  {
+    id: 12,
+    cart: [
+      {
+        productId: 29,
+        productName: "Western Digital WD_BLACK 1TB",
+        productPrice: 120.00,
+        quantity: 2,
+        totalPrice: 240.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "NVMe SSD",
+        sale: 5
+      },
+      {
+        productId: 31,
+        productName: "Sony WH-1000XM4",
+        productPrice: 280.00,
+        quantity: 1,
+        totalPrice: 280.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Noise-Canceling Headphones",
+        sale: 12
+      }
+    ],
+    totalItems: 3,
+    cartTotalPrice: 520.00,
+    customer: {
+      id: 112,
+      name: "Noah Martinez",
+      email: "noah.martinez@example.com",
+      phone: "555-123-4567",
+      address: {
+        street: "111 Maple Ave",
+        city: "Toronto",
+        country: "Canada"
+      }
+    },
+    payment: "Debit Card",
+    shipping: {
+      method: "Standard",
+      cost: 7.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-12T10:00:00Z",
+    notes: "Signature required upon delivery."
+  },
+  {
+    id: 13,
+    cart: [
+      {
+        productId: 32,
+        productName: "NZXT H510",
+        productPrice: 70.00,
+        quantity: 1,
+        totalPrice: 70.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "PC Case",
+        sale: 8
+      },
+      {
+        productId: 34,
+        productName: "Samsung 870 QVO 2TB",
+        productPrice: 180.00,
+        quantity: 1,
+        totalPrice: 180.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Hardware",
+        type: "SATA SSD",
+        sale: 0
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 250.00,
+    customer: {
+      id: 113,
+      name: "Isabella Johnson",
+      email: "isabella.johnson@example.com",
+      phone: "987-654-3210",
+      address: {
+        street: "789 Maple Ave",
+        city: "Los Angeles",
+        country: "USA"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Standard",
+      cost: 5.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-13T10:00:00Z",
+    notes: "Handle with care. Fragile items inside."
+  },
+  {
+    id: 14,
+    cart: [
+      {
+        productId: 35,
+        productName: "Logitech MX Master 3",
+        productPrice: 100.00,
+        quantity: 1,
+        totalPrice: 100.00,
+        image: require('../img/xpg.png'),
+        category: "Accessories",
+        type: "Wireless Mouse",
+        sale: 10
+      },
+      {
+        productId: 37,
+        productName: "Razer DeathAdder V2",
+        productPrice: 80.00,
+        quantity: 2,
+        totalPrice: 160.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Gaming Mouse",
+        sale: 15
+      }
+    ],
+    totalItems: 3,
+    cartTotalPrice: 260.00,
+    customer: {
+      id: 114,
+      name: "Alexander Brown",
+      email: "alexander.brown@example.com",
+      phone: "555-321-9876",
+      address: {
+        street: "333 Elm St",
+        city: "Seattle",
+        country: "USA"
+      }
+    },
+    payment: "PayPal",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-14T10:00:00Z",
+    notes: "Signature required upon delivery."
+  },
+  {
+    id: 15,
+    cart: [
+      {
+        productId: 38,
+        productName: "BenQ ZOWIE XL2546",
+        productPrice: 400.00,
+        quantity: 1,
+        totalPrice: 400.00,
+        image: require('../img/xpg.png'), 
+        category: "Monitor",
+        type: "240Hz Gaming Monitor",
+        sale: 20
+      },
+      {
+        productId: 40,
+        productName: "SteelSeries Apex Pro TKL",
+        productPrice: 180.00,
+        quantity: 1,
+        totalPrice: 180.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Mechanical Keyboard",
+        sale: 0
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 580.00,
+    customer: {
+      id: 115,
+      name: "Mia Garcia",
+      email: "mia.garcia@example.com",
+      phone: "234-567-8901",
+      address: {
+        street: "555 Oak St",
+        city: "Vancouver",
+        country: "Canada"
+      }
+    },
+    payment: "Debit Card",
+    shipping: {
+      method: "Standard",
+      cost: 7.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-15T10:00:00Z",
+    notes: "Handle with care. Fragile items inside."
+  },
+  {
+    id: 16,
+    cart: [
+      {
+        productId: 41,
+        productName: "AMD Radeon RX 6900 XT",
+        productPrice: 1200.00,
+        quantity: 1,
+        totalPrice: 1200.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "Graphics Card",
+        sale: 15
+      },
+      {
+        productId: 43,
+        productName: "Bose QuietComfort 45",
+        productPrice: 350.00,
+        quantity: 1,
+        totalPrice: 350.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Noise-Canceling Headphones",
+        sale: 10
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 1550.00,
+    customer: {
+      id: 116,
+      name: "Ethan Martinez",
+      email: "ethan.martinez@example.com",
+      phone: "321-098-7654",
+      address: {
+        street: "789 Pine St",
+        city: "Toronto",
+        country: "Canada"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-16T10:00:00Z",
+    notes: "Signature required upon delivery."
+  },
+  {
+    id: 17,
+    cart: [
+      {
+        productId: 44,
+        productName: "NZXT Kraken X73",
+        productPrice: 180.00,
+        quantity: 1,
+        totalPrice: 180.00,
+        image: require('../img/xpg.png'),
+        category: "Hardware",
+        type: "Liquid Cooler",
+        sale: 0
+      },
+      {
+        productId: 46,
+        productName: "Logitech G Pro X Superlight",
+        productPrice: 150.00,
+        quantity: 1,
+        totalPrice: 150.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Accessories",
+        type: "Gaming Mouse",
+        sale: 8
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 330.00,
+    customer: {
+      id: 117,
+      name: "Charlotte Wilson",
+      email: "charlotte.wilson@example.com",
+      phone: "555-987-6543",
+      address: {
+        street: "555 Elm St",
+        city: "Los Angeles",
+        country: "USA"
+      }
+    },
+    payment: "Credit Card",
+    shipping: {
+      method: "Standard",
+      cost: 5.00
+    },
+    orderStatus: "Processing",
+    orderDate: "2024-06-17T10:00:00Z",
+    notes: "Handle with care. Fragile items inside."
+  },
+  {
+    id: 18,
+    cart: [
+      {
+        productId: 47,
+        productName: "Sony PlayStation 5",
+        productPrice: 500.00,
+        quantity: 1,
+        totalPrice: 500.00,
+        image: require('../img/xpg.png'),
+        category: "Other",
+        type: "Gaming Console",
+        sale: 10
+      },
+      {
+        productId: 49,
+        productName: "Samsung T7 Portable SSD",
+        productPrice: 120.00,
+        quantity: 1,
+        totalPrice: 120.00,
+        image: require('../img/asus motherboard.png'),
+        category: "Hardware",
+        type: "Portable SSD",
+        sale: 5
+      }
+    ],
+    totalItems: 2,
+    cartTotalPrice: 570.00,
+    customer: {
+      id: 118,
+      name: "Amelia Thompson",
+      email: "amelia.thompson@example.com",
+      phone: "456-789-0123",
+      address: {
+        street: "111 Pine St",
+        city: "Seattle",
+        country: "USA"
+      }
+    },
+    payment: "PayPal",
+    shipping: {
+      method: "Express",
+      cost: 10.00
+    },
+    orderStatus: "Delivered",
+    orderDate: "2024-06-18T10:00:00Z",
+    notes: "Signature required upon delivery."
+  },
+]

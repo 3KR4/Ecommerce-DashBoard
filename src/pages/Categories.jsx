@@ -22,7 +22,7 @@ export default function Categories () {
               {category.id}
               
                 <div className="actions">
-                <Link to={`/categories/create?edit=${category.id}`}><FiEdit/></Link>
+                  <Link to={`/categories/create?edit=${category.id}`}><FiEdit/></Link>|
                   <RiDeleteBin6Line/>
                 </div>
             </div>

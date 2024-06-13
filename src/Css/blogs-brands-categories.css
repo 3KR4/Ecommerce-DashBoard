@@ -14,13 +14,14 @@
 }
 .megaMenu,
 .brands {
-  gap: 25px;
+  gap: 18px;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(251px, 1fr));
   cursor: initial;
 }
-.card {
+.categories-page .card,
+.brands-page .card {
   background: var(--section-color);
   padding: 15px 29px 12px;
   border-radius: 10px;
@@ -149,14 +150,6 @@
 .addBlogPage .specificHolder {
   width: 100%;
 }
-.addBlogPage .inputHolder textarea {
-  font-size: 16px;
-  padding: 18px 19px;
-}
-
-.addBlogPage .inputHolder textarea::placeholder {
-  font-weight: 400;
-}
 .addBlogPage .specificHolder .inputHolder {
   flex-direction: column;
   align-items: flex-start;
@@ -167,7 +160,7 @@
 }
 .addBlogPage .specificHolder textarea {
   height: 100px !important;
-  padding: 18px 12px !important;
+  padding: 12px 12px !important;
 }
 .addBlogPage .specificHolder {
   width: 100%;
@@ -193,12 +186,11 @@
   border-radius: 10px;
 }
 .create-category .typesHolder {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
   gap: 15px;
 }
 .create-category .typeHolder {
-  width: 49.4%;
   display: flex;
   flex-direction: column;
   gap: 7px;
@@ -233,11 +225,11 @@
   color:var(--body-color);
 }
 .create-category form .formHolder {
-  width: 75%;
+  width: 100%;
 }
 .create-category .specificHolder .inputHolder .remove {
   margin-left: 4px;
 }
 .create-category form .formHolder > .inputHolder {
-  width: 60.6%;
+  width: 25%;
 }

@@ -6,20 +6,22 @@ import { IoCloseSharp } from "react-icons/io5";
 import { categories } from '../../components/data';
 
 export default function CreateCategory() {
-
   const queryParams = new URLSearchParams(window.location.search);
   const edit = queryParams.get('edit');
-  
+
   const { register, handleSubmit, control, setValue, formState: { errors } } = useForm({
     defaultValues: {
       types: []
     }
   });
 
-  const { fields, append, remove, update } = useFieldArray({ control, name: "types" });
+  const { fields, append, remove, update } = useFieldArray({
+    control,
+    name: "types"
+  });
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [specError, setSpecError] = useState({});
-
 
   useEffect(() => {
     if (edit) {
@@ -28,22 +30,20 @@ export default function CreateCategory() {
         const { id: categoryName, list = [] } = categoryToEdit;
         setValue('categoryName', categoryName);
         if (list.length > 0) {
-          // If there are types in the list, set the form values
           const [firstType] = list;
           setValue('types', [
             {
               typeName: firstType.id,
-              specificAttributes: Object.keys(firstType.specific).map((attr, attrIndex) => ({
+              specificAttributes: Object.keys(firstType.specific).map(attr => ({
                 attributeName: attr,
                 values: firstType.specific[attr].join(', '),
               })),
             },
           ]);
-          // Set the remaining types in the list
           for (let i = 1; i < list.length; i++) {
             const type = list[i];
             setValue(`types.${i}.typeName`, type.id);
-            setValue(`types.${i}.specificAttributes`, Object.keys(type.specific).map((attr, attrIndex) => ({
+            setValue(`types.${i}.specificAttributes`, Object.keys(type.specific).map(attr => ({
               attributeName: attr,
               values: type.specific[attr].join(', '),
             })));
@@ -52,7 +52,6 @@ export default function CreateCategory() {
       }
     }
   }, [edit, setValue]);
-
 
   const onSubmit = (data) => {
     const formData = {
@@ -65,7 +64,7 @@ export default function CreateCategory() {
         }, {})
       }))
     };
-  console.log(formData);
+    console.log(formData);
   };
 
   const removeSpecificAttribute = (typeIndex, attrIndex) => {
@@ -73,38 +72,32 @@ export default function CreateCategory() {
     const newSpecificAttributes = currentType.specificAttributes.filter((_, i) => i !== attrIndex);
     update(typeIndex, { ...currentType, specificAttributes: newSpecificAttributes });
   };
-  
+
   const addSpecificAttribute = (typeIndex) => {
     const currentType = fields[typeIndex];
     const specificAttributes = currentType.specificAttributes;
-    if (
-      specificAttributes[specificAttributes.length - 1].attributeName &&
-      specificAttributes[specificAttributes.length - 1].values
-    ) {
+    if (specificAttributes[specificAttributes.length - 1].attributeName && specificAttributes[specificAttributes.length - 1].values) {
       const newSpecificAttributes = [...specificAttributes, { attributeName: '', values: '' }];
       update(typeIndex, { ...currentType, specificAttributes: newSpecificAttributes });
-      setSpecError(false)
-    }
-    else {
-      setSpecError({ typeIndex })
+      setSpecError({});
+    } else {
+      setSpecError({ typeIndex });
     }
   };
 
-  
   const addMoreTypes = () => {
     const lastTypeIndex = fields.length - 1;
     const lastType = fields[lastTypeIndex];
     const isValidType = lastType && lastType.typeName && lastType.specificAttributes.every(attr => attr.attributeName && attr.values);
 
     if (lastTypeIndex === fields.length - 1 || isValidType) {
-        append({ typeName: '', specificAttributes: [{ attributeName: '', values: '' }] });
+      append({ typeName: '', specificAttributes: [{ attributeName: '', values: '' }] });
     }
-};
-
-
+  };
+  
   return (
     <div className='create-category container'>
-      <h2 className="sectionTitle">Add Category</h2>
+      <h2 className="sectionTitle">{edit ? 'Edit Categorie' : 'Add Categorie'}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="formHolder">
           <div className={`inputHolder ${errors.categoryName ? 'notvalid' : ''}`}>
@@ -187,12 +180,12 @@ export default function CreateCategory() {
                 </div>
               </div>
             ))}
-            <button type="button" className="main-buttom" onClick={addMoreTypes}>
+            <button type="button" style={{ alignSelf: 'center'}} className="main-buttom" onClick={addMoreTypes}>
               Add More Types
             </button>
           </div>
           <button type="submit" className="main-buttom" onClick={() => setIsSubmitted(true)}>
-            Create Category
+          {edit ? 'Update Categorie' : 'Add Categorie'}
           </button>
         </div>
       </form>

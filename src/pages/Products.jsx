@@ -9,7 +9,8 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import ReactPaginate from 'react-paginate';
 
 export default function Products() {
-  const fields = ['name', 'Images', 'price', 'category', 'reviews', 'brand', 'stock', 'purchased', 'actions'];
+  const fields = ['name', 'Images', 'price', 'category', 'reviews', 'brand', 'purchased', 'stock', 'actions'];
+  
 
   const renderProductInfo = (product, field) => {
     let brand = brands.find((x) => x.id === product.brand.toLowerCase()) || { id: product.brand, img: null };
@@ -64,7 +65,10 @@ export default function Products() {
         );
       case 'stock':
         return (
-            <span className='stock' style={{ background: product.stock === 0 ? '#ce3636' : product.stock < 7 ? '#ff8f00d9' : '#1e9147' }}>
+            <span className='stock'   style={{
+              background: product.stock === 0 ? '#ce3636' : product.stock < 7 ? '#ff8f00d9' : '',
+              color: product.stock === 0 || product.stock < 7 ? 'white' : ''
+            }}>
               {product.stock}
             </span>
         );
@@ -91,18 +95,18 @@ export default function Products() {
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
   useEffect (() => {
-    const endOffset = itemOffset + 8;
+    const endOffset = itemOffset + 10;
     setCurrentItems(allProducts.slice(itemOffset, endOffset));
-    setPageCount (Math.ceil(allProducts.length / 8));
-    }, [itemOffset, 8, allProducts]);
+    setPageCount (Math.ceil(allProducts.length / 10));
+    }, [itemOffset, 10, allProducts]);
     const handlePageClick = (event) => {
-    const newOffset = (event.selected * 8) % allProducts.length;
+    const newOffset = (event.selected * 10) % allProducts.length;
     setItemOffset(newOffset);
     window.scrollTo(0, 0);
     };
 
   return (
-    <div className='compare-page container'>
+    <div className='show-data container'>
       <div className="head">
         <h2 className="sectionTitle">All Products</h2>
         <Link className='main-buttom' to='/products/create'>Create Product</Link>
@@ -117,7 +121,7 @@ export default function Products() {
             </tr>
           </thead>
           <tbody>
-            {currentItems.slice(0, 8).map((product, index) => (
+            {currentItems.map((product, index) => (
               <tr key={index}>
                 {fields.map((field) => (
                   <td key={field}>

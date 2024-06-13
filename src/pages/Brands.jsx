@@ -22,7 +22,7 @@ export default function Brands() {
               <div className='title'>
                 <img src={brand.img} alt="" />
                   <div className="actions">
-                    <Link to={`/brands/create?edit=${brand.id}`}><FiEdit/></Link>
+                    <Link to={`/brands/create?edit=${brand.id}`}><FiEdit/></Link>|
                     <RiDeleteBin6Line/>
                   </div>
               </div>

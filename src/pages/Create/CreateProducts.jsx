@@ -27,6 +27,8 @@ const CreateProducts = () => {
   const [isSubmited, setisSubmited] = useState(false);
   let isThereImg = false;
 
+  console.log(images);
+
   const handleDrop = (e) => {
     e.preventDefault();
     setIsDrag(false);
@@ -130,6 +132,7 @@ const CreateProducts = () => {
   useEffect(() => {
     if (editProductId) {
       const productToEdit = allProducts.find((product) => product.id === +editProductId);
+
       if (productToEdit) {
         setValue('name', productToEdit.name);
         setValue('stock', productToEdit.stock);
@@ -138,7 +141,7 @@ const CreateProducts = () => {
         setValue('details', productToEdit.details);
         setValue('aboutInfo', productToEdit.about);
         setTags(productToEdit.tags || []);
-        setImages(productToEdit.images || []);
+        setImages(productToEdit.Images || []);
         setSelectChange({
           brand: productToEdit.brand || 'Choose',
           category: productToEdit.category || 'Choose',
@@ -175,7 +178,7 @@ const CreateProducts = () => {
 
   return (
     <div className='addProductPage container'>
-      <h2 className="sectionTitle">Add Product</h2>
+      <h2 className="sectionTitle">{editProductId ? 'Edit Product' : 'Add Product'}</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="formHolder">
           <div className="rowHolder">
@@ -391,6 +394,52 @@ const CreateProducts = () => {
           </div>
 
           <div className="rowHolder">
+            <div className="divhasspecificHolder">
+              {/* specification */}
+              <div className="specificHolder">
+                <pre className="placeHolder">Add Specification (optional)</pre>
+                {specifications.length > 0 && (
+                  <div className="holder">
+                    {specifications.map((spec, index) => (
+                      <div key={index} className="inputHolder">
+                        <input
+                          type="text"
+                          value={spec.key}
+                          onChange={(e) => handleSpecificationChange(index, 'key', e.target.value)}
+                          placeholder="Key"
+                          className={specError && index === specifications.length - 1 && spec.key.trim() === '' ? 'notvalid' : ''}
+                        />
+                        <input
+                          type="text"
+                          value={spec.value}
+                          onChange={(e) => handleSpecificationChange(index, 'value', e.target.value)}
+                          placeholder="Value"
+                          className={specError && index === specifications.length - 1 && spec.value.trim() === '' ? 'notvalid' : ''}
+                        />
+                        <button type="button" className="remove" onClick={() => removeSpecification(index)}>x</button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                <div className="btnHolder">
+                  {specError && (
+                    <span className="error">
+                      <AiOutlineExclamationCircle />
+                      please enter the last key and value first
+                    </span>
+                  )}
+                  <button type="button" className="button" onClick={addSpecification}>
+                    {specifications.length === 0 ? 'Add' : 'Add More'}
+                  </button>
+                </div>
+                
+              </div>
+              <button type="submit" className="main-buttom" onClick={() => {
+                setisSubmited(true)
+              }}>
+                {editProductId ? 'Update Product' : 'Create Product'}
+              </button>
+              </div>
             {/* ABOUT */}
             <div className="holder">
               <div className={`inputHolder ${errors.aboutInfo ? 'notvalid' : ''}`}>
@@ -410,51 +459,7 @@ const CreateProducts = () => {
                   </span>
                 )}
               </div>
-              <button type="submit" className="main-buttom" onClick={() => {
-                    setisSubmited(true)
-              }}>
-                Create Product
-              </button>
             </div>
-            {/* specification */}
-            <div className="specificHolder">
-              <pre className="placeHolder">Add Specification (optional)</pre>
-              {specifications.length > 0 && (
-                <div className="holder">
-                  {specifications.map((spec, index) => (
-                    <div key={index} className="inputHolder">
-                      <input
-                        type="text"
-                        value={spec.key}
-                        onChange={(e) => handleSpecificationChange(index, 'key', e.target.value)}
-                        placeholder="Key"
-                        className={specError && index === specifications.length - 1 && spec.key.trim() === '' ? 'notvalid' : ''}
-                      />
-                      <input
-                        type="text"
-                        value={spec.value}
-                        onChange={(e) => handleSpecificationChange(index, 'value', e.target.value)}
-                        placeholder="Value"
-                        className={specError && index === specifications.length - 1 && spec.value.trim() === '' ? 'notvalid' : ''}
-                      />
-                      <button type="button" className="remove" onClick={() => removeSpecification(index)}>x</button>
-                    </div>
-                  ))}
-                </div>
-              )}
-              <div className="btnHolder">
-                {specError && (
-                  <span className="error">
-                    <AiOutlineExclamationCircle />
-                    please enter the last key and value first
-                  </span>
-                )}
-                <button type="button" className="button" onClick={addSpecification}>
-                  {specifications.length === 0 ? 'Add' : 'Add More'}
-                </button>
-              </div>
-            </div>
-
           </div>
         </div>
         <div className="productImages">
@@ -482,8 +487,16 @@ const CreateProducts = () => {
             {images.map((image, index) => (
               <div className="uploaded" key={index}>
                 <div>
+                {editProductId ? (
+                  typeof image === 'string' ? (
+                    <img src={image} alt="Blog" width="150" />
+                  ) : (
+                    <img src={URL.createObjectURL(image)} alt={image.name} width="150" />
+                  )
+                ) : (
                   <img src={URL.createObjectURL(image)} alt={image.name} width="150" />
-                  <p>Name: {image.name}</p>
+                )}
+                  <p>{image.name ? 'Name:' : 'Number:'} {image.name || index}</p>
                 </div>
                 <CloseIcon onClick={() => handleRemoveImage(index)}/>
               </div>
@@ -493,7 +506,7 @@ const CreateProducts = () => {
         <button type="submit" className="main-buttom" onClick={() => {
               setisSubmited(true)
         }}>
-          Create Product
+          {editProductId ? 'Update Product' : 'Create Product'}
         </button>
       </form>
     </div>

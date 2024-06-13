@@ -93,6 +93,7 @@ button {
   background: transparent;
 }
 .placeHolder {
+  font-weight: 300;
   color: var(--paragraph);
 }
 svg {
@@ -102,8 +103,20 @@ svg {
 svg.open {
   transform: translateY(2px) rotate(180deg) !important;
 }
-
-
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0px;
+  color: var(--text-color);
+}
+.actions svg {
+  font-size: 20px;
+  cursor: pointer;
+}
+.actions a svg {
+  transform: translateY(2px);
+}
 /*! ========== form ========== */
 form {
   display: flex;
@@ -139,19 +152,27 @@ form .rowHolder {
 .inputHolder input:focus {
   padding: 14px 19px 0;
 }
-.inputHolder textarea {
+.inputHolder .holder textarea {
+  height: 154px;
+  font-size: 16.8px;
+  padding: 19px 20px;
   letter-spacing: 0.7px;
   line-height: 1.3;
 }
 .inputHolder textarea:focus {
   padding: 27px 19px 0;
 }
-.inputHolder input::placeholder,
-.inputHolder textarea::placeholder {
-  transition-delay: 0.3s;
+.inputHolder:has(textarea) h6.placeHolder {
+  font-size: 17px;
+  font-weight: 300;
 }
 .inputHolder textarea::placeholder {
   font-weight: 300;
+  font-size: 15.3px;
+}
+.inputHolder input::placeholder,
+.inputHolder textarea::placeholder {
+  transition-delay: 0.3s;
 }
 .inputHolder input:focus::placeholder,
 .inputHolder textarea:focus::placeholder {
@@ -167,9 +188,7 @@ form .rowHolder {
 .inputHolder input:not(:placeholder-shown) {
   padding: 14px 19px 0;
 }
-.inputHolder textarea:not(:placeholder-shown) {
-  padding: 27px 19px 0;
-}
+
 .inputHolder:has(input:not(:placeholder-shown)) h6.placeHolder,
 .inputHolder:has(textarea:not(:placeholder-shown)) h6.placeHolder { 
   top: 9px;
@@ -179,17 +198,17 @@ form .rowHolder {
 .inputHolder.notvalid:has(input:focus) h6.placeHolder,
 .inputHolder.notvalid:has(textarea:focus) h6.placeHolder {
   color: #c81d1d !important;
-  font-weight: 600;
   letter-spacing: 0.7px;
+  font-weight: 600;
+}
+.inputHolder input::placeholder,
+.inputHolder textarea::placeholder {
+  color: var(--paragraph);
 }
 .inputHolder span svg,
 .selectHolder .error svg,
 .specificHolder .error svg {
   color: #c81d1d;
-}
-.rowHolder:last-child h6.placeHolder {
-  font-size: 17px;
-  font-weight: 300;
 }
 form button.remove {
   cursor: pointer;
@@ -248,15 +267,8 @@ form button.remove:hover {
   transition: padding 0.3s;
   border-radius: 5px !important;
 }
-.inputHolder input::placeholder,
-.inputHolder textarea::placeholder {
-  color: var(--paragraph);
-}
-.inputHolder textarea {
-  height: 154px;
-  font-size: 16.8px;
-  padding: 18px 20px;
-}
+
+
 .inputHolder.password input {
   padding-right: 40px;
 }
@@ -307,19 +319,35 @@ form button.remove:hover {
   gap: 12px;
   overflow: auto;
 }
+.divhasspecificHolder:has(.specificHolder) {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.divhasspecificHolder .specificHolder {
+  width: 100%;
+}
+.inputHolder textarea:focus,
+.inputHolder textarea:not(:placeholder-shown) {
+  padding: 26px 19px 0 !important;
+}
+.specificHolder .holder textarea:not(:placeholder-shown),
+.specificHolder .holder textarea:focus {
+  padding: 12px 12px 0 !important;
+}
 .specificHolder .holder input:not(:placeholder-shown),
-.specificHolder .holder  input:focus {
+.specificHolder .holder input:focus {
   padding: 0 0 0 10px;
 }
-.specificHolder .holder  input::placeholder {
+
+.specificHolder .holder input::placeholder,
+.specificHolder .holder textarea::placeholder {
   transition-delay: 0s;
 }
-.inputHolder .tagsHolder::-webkit-scrollbar-thumb {
-  border-radius: 0;
-}
-.inputHolder .tagsHolder::-webkit-scrollbar-track {
-  border-radius: 0;
-  height: 1px;
+.inputHolder .tagsHolder::-webkit-scrollbar {
+  height: 6px;
+  border-radius: 10px;
 }
 .inputHolder .tagsHolder .tag {
   display: flex;
@@ -360,6 +388,7 @@ form button.remove:hover {
 .rowHolder:last-child > .holder {
   width: 50%;
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
   gap: 10px;
 }
@@ -414,14 +443,6 @@ form button.remove:hover {
   border-left: 2px solid var(--main-color);
   margin-top: 7px;
 }
-
-.inputHolder textarea:not(:placeholder-shown),
-.inputHolder textarea:focus  {
-  padding: 26px 19px 0 !important;
-}
-
-
-
 /* Images Holder */
 .productImages {
   background-color: var(--section-color);
@@ -879,8 +900,9 @@ body.light .sidebar ul li:not(:first-child) a:hover {
 }
 .sidebar.open li:first-child {
   background: var(--body-color);
-  border-bottom: 2px solid var(--border-color);
+  padding-left: 20px;
   margin-bottom: 1px;
+  border-bottom: 2px solid var(--border-color);
 }
 body.light .sidebar.open li:first-child {
   background: var(--section-color);
@@ -928,7 +950,146 @@ body.light .sidebar li:first-child  {
 }
 
 
+.model {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  z-index: -1;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%,-50%);
+  background: transparent;
+}
+.model .holder.container {
+  width: 600px;
+  height: fit-content;
+  padding: 24px 27px 22px;
+  transition: 0.3s;
+  border-radius: 12px;
+  flex-direction: column;
+  background: var(--body-color);
+  box-shadow: 0 0 6px 0 var(--main-color);
+  scale: 0.8;
+  opacity: 0;
+  z-index: -1;
+}
+.model.active {
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.392);
+}
+.model.active .holder {
+  scale: 1;
+  opacity: 1;
+}
+.model h3 {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.model h3 svg {
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: var(--text-color);
+  transform: translateX(5px);
+}
+.model h3 svg:hover {
+  padding: 2px;
+  color: white !important;
+  background: #ce3431;
+}
+.purchases .model .holder.container {
+  width: fit-content;
+  display: flex;
+  gap: 11px;
+}
+.model .top {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.model .top > div {
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  background: var(--section-color);
+}
+.model .top h3 {
+  margin-bottom: 2px;
+  color: var(--main-color);
+}
+.model .top .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+}
+.model .top div h4 span {
+  color: var(--paragraph);
+  margin-left: 2px;
+}
+.model .secondTitle {
+  margin-top: 12px;
+}
+.model .modelTable {
+  overflow: auto;
+  box-shadow: none;
+  max-height: 280px;
+}
+.model .modelTable::-webkit-scrollbar {
+  height: 5px !important;
+  width: 5px;
+}
+.model table thead td {
+  border-top: 1px solid var(--border-color);
+}
+.model table td {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  text-align: center;
+}
+.model table td:last-child {
+  border-right: 1px solid var(--border-color);
+}
+.model table thead td {
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--text-color);
+  padding: 16px;
+  min-width: 140px;
+}
+.model table tbody td {
+  font-weight: 500;
+  color: var(--paragraph);
+  padding: 0 16px;
+}
+.model table td img {
+  width: 68px;
+}
+.model table .price {
+  width: unset;
+}
+.model table tbody td .price,
+.model table tbody td .category {
+  width: max-content;
+  margin: 0 auto;
+}
 
+
+@media(max-width:1600px) {
+  .inputHolder.tags .holder {
+    width: 88%;
+  }
+}
 @media(max-width:1400px) {
   .error-page .main-buttom {
     right: 46.1%;
@@ -947,6 +1108,9 @@ body.light .sidebar li:first-child  {
   }
   form .formHolder {
     width: 100%;
+  }
+  .inputHolder.tags .holder {
+    width: 50%;
   }
 }
 
@@ -978,7 +1142,11 @@ body.light .sidebar li:first-child  {
     display: block;
   }
 }
-
+@media(min-width:790px)  {
+  .purchases .model .holder.container {
+    max-width: 93%;
+  }
+}
 @media(max-width:786px) {
   .header {
     margin-bottom: 15px;
@@ -1047,7 +1215,7 @@ body.light .sidebar li:first-child  {
   }
   .selectHolder h4 {
     font-size: 13px;
-    padding: 13px 8px 13px 11px;
+    padding: 13px 8px 13px 19px;
   }
   .rowHolder:last-child > .holder,
   .specificHolder {

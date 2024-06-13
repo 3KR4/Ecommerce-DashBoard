@@ -31,7 +31,7 @@ export default function CreateBrand() {
       if (brandToEdit) {
         setValue('name', brandToEdit.id);
         setTags(brandToEdit.produce || []);
-          setImage(brandToEdit.img);
+        setImage(brandToEdit.img);
       }
     }
   }, [edit, setValue]);
