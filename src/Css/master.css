@@ -38,8 +38,8 @@ body.dark {
   --box-shadow:     rgb(0 0 0 / 24%) 0px 7px 19px -11px;
 }
 ::-webkit-scrollbar {
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 6px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -83,7 +83,7 @@ hr {
 }
 .sectionTitle {
   letter-spacing: 0.7px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   font-size: 21px;
   text-transform: uppercase;
 }
@@ -117,6 +117,86 @@ svg.open {
 .actions a svg {
   transform: translateY(2px);
 }
+
+
+.ui-checkbox {
+  --primary-color: #caa02d;
+  --secondary-color: white;
+  --primary-hover-color: #4096ff;
+  --checkbox-border-radius: 3px;
+  --checkbox-border-color: #d9d9d9;
+  --checkbox-border-width: 1px;
+  --checkbox-border-style: solid;
+  --checkmark-size: 1.2;
+}
+.ui-checkbox, 
+.ui-checkbox *, 
+.ui-checkbox *::before, 
+.ui-checkbox *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ui-checkbox {
+  appearance: none;
+  padding: 0px;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--checkbox-border-radius);
+  background: #bdbdbd;
+  border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+  border-color: #b8b8b8;
+}
+body.light .ui-checkbox {
+  background: white;
+}
+.ui-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 0 calc(20px / 2.5) var(--primary-color);
+  border-radius: inherit;
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+}
+.ui-checkbox::before {
+  top: 40%;
+  left: 50%;
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  opacity: 0;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+}
+/* actions */
+.ui-checkbox:hover {
+  border-color: var(--primary-color);
+}
+.ui-checkbox:checked {
+  background: var(--primary-color);
+  border-color: transparent;
+}
+.ui-checkbox:checked::before {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}
+.ui-checkbox:active:not(:checked)::after {
+  box-shadow: none;
+  transition: none;
+  opacity: 1;
+}
+
+
 /*! ========== form ========== */
 form {
   display: flex;
@@ -139,6 +219,12 @@ form .rowHolder {
 .inputHolder {
   position: relative;
   width: 100%;
+}
+pre.placeHolder {
+  font-weight: 400;
+}
+.flash-sale pre.placeHolder {
+  margin-bottom: 10px;
 }
 .inputHolder h6.placeHolder {
   position: absolute;
@@ -327,6 +413,35 @@ form button.remove:hover {
 }
 .divhasspecificHolder .specificHolder {
   width: 100%;
+}
+.divhasspecificHolder + .holder .flash-sale {
+  width: 100%;
+  padding: 18px 20px;
+  border-radius: 5px;
+  background: var(--section-color);
+}
+.divhasspecificHolder + .holder .datePicker {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--text-color);
+}
+.divhasspecificHolder + .holder .datePicker > div:first-child input {
+  font-size: 17px;
+  font-weight: 500;
+  border: none;
+  height: 40px;
+  padding: 19px;
+  outline: none;
+  color: var(--text-color);
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid var(--border-color);
+}
+.divhasspecificHolder + .holder .datePicker li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .inputHolder textarea:focus,
 .inputHolder textarea:not(:placeholder-shown) {
@@ -1082,6 +1197,37 @@ body.light .sidebar li:first-child  {
 .model table tbody td .category {
   width: max-content;
   margin: 0 auto;
+}
+
+
+.calendar-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+}
+
+.calendar-container h3 {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.calendar-container button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.calendar-container button:hover {
+  background-color: #0056b3;
 }
 
 

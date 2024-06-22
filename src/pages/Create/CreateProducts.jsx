@@ -5,6 +5,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { FaAngleDown } from 'react-icons/fa';
 import { allProducts, categories, brands } from '../../components/data';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { isWeekend, formatISO  } from "date-fns"; // Import necessary date-fns functions
+
 
 
 const CreateProducts = () => {
@@ -26,8 +30,6 @@ const CreateProducts = () => {
   const [isDrag, setIsDrag] = useState(false);
   const [isSubmited, setisSubmited] = useState(false);
   let isThereImg = false;
-
-  console.log(images);
 
   const handleDrop = (e) => {
     e.preventDefault();
@@ -142,6 +144,8 @@ const CreateProducts = () => {
         setValue('aboutInfo', productToEdit.about);
         setTags(productToEdit.tags || []);
         setImages(productToEdit.Images || []);
+        setSelectedDate(productToEdit.endTime ? new Date(productToEdit.endTime) : null);
+        setFlashSale(productToEdit.flashSale || false);
         setSelectChange({
           brand: productToEdit.brand || 'Choose',
           category: productToEdit.category || 'Choose',
@@ -151,6 +155,22 @@ const CreateProducts = () => {
       }
     }
   }, [editProductId, setValue]);
+
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [flashSale, setFlashSale] = useState(false);
+    const handleDateChange = (date) => {
+    setSelectedDate(date);
+    }
+    // Function to check if a date is a weekend
+    const isWeekendDay = (date) => {
+      return isWeekend (date);
+    }
+    // Function to filter out weekends
+    const filterWeekends = (date) => {
+      return !isWeekendDay (date);
+    }
+
+
 
 
   const onSubmit = (data) => {
@@ -169,6 +189,8 @@ const CreateProducts = () => {
       brand: selectChange.brand,
       type: selectChange.type,
       specifications: specificationsObject, 
+      endTime: selectedDate ? formatISO(selectedDate, { representation: 'complete' }) : null,
+      flashSale
     };
   
     if (images.length !== 0 && selectChange.brand != 'Choose' && selectChange.category != 'Choose' && selectChange.category != 'Choose') {
@@ -459,6 +481,33 @@ const CreateProducts = () => {
                   </span>
                 )}
               </div>
+              {editProductId && (
+                <div className="flash-sale">
+                  <pre className="placeHolder">Flash Sale</pre>
+                  <div className="datePicker">
+                    <DatePicker
+                      selected={selectedDate}
+                      onChange={handleDateChange}
+                      filterDate={filterWeekends}
+                      dateFormat="yyyy-MM-dd; hh:mm"
+                      placeholderText="Select a date"
+                      className="datePicker"
+                      timeFormat="hh:mm"
+                      timeIntervals={30}
+                      showTimeSelect 
+                    />
+                    |
+                    <li>
+                      Show In Home Sales
+                      <input
+                        type="checkbox"
+                        checked={flashSale}
+                        onChange={() => setFlashSale(!flashSale)}
+                      />
+                    </li>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

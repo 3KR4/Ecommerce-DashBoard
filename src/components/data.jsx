@@ -6,21 +6,25 @@ export const cardsData = [
   {
     title: "Total Sales",
     value: "$15K",
+    percentage: 26,
     svg: MdAttachMoney,
   },
   {
     title: "Total Orders",
     value: "300",
+    percentage: 19,
     svg: FaFileAlt,
   },
   {
     title: "Products Sold",
     value: "05",
+    percentage: 21,
     svg: IoLogoBuffer,
   },
   {
     title: "New Customers",
     value: "08",
+    percentage: 13,
     svg: FaUserPlus,
   },
 ];
@@ -127,7 +131,6 @@ export const about = [
     ]
   }
 ];
-
 export const categories = [
   {
     id: "hardware",
@@ -594,7 +597,9 @@ export const allProducts = [
     stars: 4.5,
     brand: 'xpg',
     Images: [require('../img/xpg.png'), require('../img/xpg2.png'), require('../img/xpg3.png'), require('../img/xpg4.png'), require('../img/xpg5.png')],
-    tags: ['asdasdasdasdad', 'asdasdasxasdasdad', 'asasdasdxxxdasdasdasdad', 'asdasdaasdasd asda cxvad', 'asdaszxczxczxcdasdasdaasd aSdZXcd'],
+    Tags: ['Wired Mouse', '3200'],
+    endTime: '',
+    flashSale: false,
     details:"ASUS TUF Gaming VG289Q1A 28” Monitor, 4K UHD (3840 x 2160), IPS, Adaptive-Sync/ FreeSync, Eye Care, DisplayPort HDMI, DCI-P3 HDR 10, Shadow Boost, Black.",
     about: "Interface: USB Type-A\nSwitch: Mechanical Switches with 20-Million clicks rating\nDPI: 400/800/1600/3200/6400/12000\nWarranty: 2 Year Limited",
     specifications: {
@@ -610,7 +615,7 @@ export const allProducts = [
     testimonies: [
       {
         id: 1,
-        name: 'Mahmoud Elshazly',
+        name: 'Ahmed Hani',
         details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
         stars: 5,
       },
@@ -633,7 +638,6 @@ export const allProducts = [
         stars: 3.5,
       },
     ],
-    Tags: ['Wired Mouse', '3200']
   },
   {
     id: 2,
@@ -989,6 +993,430 @@ export const blogs = [
     tags: ['','',''],
     comments: [],
   },
+];
+export const userChats = [
+  {
+    id: 1,
+    name: 'Ahmed Hani',
+    lastMessage: 'Hello, ASDASD AD ADS ASDASD ASD ASDASD ASD  how are you?',
+    lastTime: '2024-06-16T20:35:00Z', // Date as a string
+    newMessage: 2
+  },
+  {
+    id: 2,
+    name: 'John Doe',
+    lastMessage: 'See you tomorrow!',
+    lastTime: '2024-06-16T00:22:00Z',
+    newMessage: 0
+  },
+  {
+    id: 3,
+    name: 'Jane Smith',
+    lastMessage: 'Can you send the report?',
+    lastTime: '2024-06-17T12:10:00Z',
+    newMessage: 5
+  },
+  {
+    id: 4,
+    name: 'Michael Brown',
+    lastMessage: 'Thanks!',
+    lastTime: '2023-06-17T11:30:00Z',
+    newMessage: 0
+  },
+  {
+    id: 5,
+    name: 'Emily Davis',
+    lastMessage: 'Let’s catch up later.',
+    lastTime: '2023-06-16T16:45:00Z',
+    newMessage: 1
+  },
+  {
+    id: 6,
+    name: 'David Wilson',
+    lastMessage: 'What do you think about this?',
+    lastTime: '2023-06-15T20:05:00Z',
+    newMessage: 3
+  },
+  {
+    id: 7,
+    name: 'Sarah Johnson',
+    lastMessage: 'I’ll be there at 5.',
+    lastTime: '2023-06-14T08:00:00Z',
+    newMessage: 0
+  },
+  {
+    id: 8,
+    name: 'Chris Lee',
+    lastMessage: 'Can we reschedule?',
+    lastTime: '2023-06-13T12:45:00Z',
+    newMessage: 4
+  },
+];
+export const userChatHistories = [
+  {
+    userId: 1,
+    name: "Ahmed Hani",
+    phone: "123-456-7890",
+    email: "mahmoud@example.com",
+    chats: [
+      {
+        message: "Hey, how are you?",
+        timestamp: "2023-06-16T14:35:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "I'm good,t thanks thanks thanks thanks thanks thanks thanks thankshanks  thanks!thanks thanks thanks How about you?",
+        timestamp: "2023-06-16T14:36:00Z",
+        sender: "You"
+      },
+      {
+        message: "Doing well, just busy with work.",
+        timestamp: "2023-06-16T14:37:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "That sounds tough. Take care!",
+        timestamp: "2023-06-16T14:38:00Z",
+        sender: "You"
+      },
+      {
+        message: "Thanks!",
+        timestamp: "2023-06-16T14:39:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "Any plans for the weekend?",
+        timestamp: "2023-06-16T14:40:00Z",
+        sender: "You"
+      },
+      {
+        message: "Hey, how are you?",
+        timestamp: "2023-06-16T14:35:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "I'm good,t thanks thanks thanks thanks thanks thanks thanks thankshanks  thanks!thanks thanks thanks How about you?",
+        timestamp: "2023-06-16T14:36:00Z",
+        sender: "You"
+      },
+      {
+        message: "Doing well, just busy with work.",
+        timestamp: "2023-06-16T14:37:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "That sounds tough. Take care!",
+        timestamp: "2023-06-16T14:38:00Z",
+        sender: "You"
+      },
+      {
+        message: "Thanks!",
+        timestamp: "2023-06-16T14:39:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "Any plans for the weekend?",
+        timestamp: "2023-06-16T14:40:00Z",
+        sender: "You"
+      },
+      {
+        message: "Hey, how are you?",
+        timestamp: "2023-06-16T14:35:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "I'm good,t thanks thanks thanks thanks thanks thanks thanks thankshanks  thanks!thanks thanks thanks How about you?",
+        timestamp: "2023-06-16T14:36:00Z",
+        sender: "You"
+      },
+      {
+        message: "Doing well, just busy with work.",
+        timestamp: "2023-06-16T14:37:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "That sounds tough. Take care!",
+        timestamp: "2023-06-16T14:38:00Z",
+        sender: "You"
+      },
+      {
+        message: "Thanks!",
+        timestamp: "2023-06-16T14:39:00Z",
+        sender: "Ahmed Hani"
+      },
+      {
+        message: "Any plans for the weekend?",
+        timestamp: "2023-06-16T14:40:00Z",
+        sender: "You"
+      },
+    ]
+  },
+  {
+    userId: 2,
+    name: "John Doe",
+    phone: "234-567-8901",
+    email: "john.doe@example.com",
+    chats: [
+      {
+        message: "See you tomorrow!",
+        timestamp: "2023-06-15T18:22:00Z",
+        sender: "John Doe"
+      },
+      {
+        message: "Sure, see you!",
+        timestamp: "2023-06-15T18:23:00Z",
+        sender: "You"
+      },
+      {
+        message: "Looking forward to it!",
+        timestamp: "2023-06-15T18:24:00Z",
+        sender: "John Doe"
+      },
+      {
+        message: "Me too!",
+        timestamp: "2023-06-15T18:25:00Z",
+        sender: "You"
+      },
+      {
+        message: "Have a great day!",
+        timestamp: "2023-06-15T18:26:00Z",
+        sender: "John Doe"
+      },
+      {
+        message: "Thanks, you too!",
+        timestamp: "2023-06-15T18:27:00Z",
+        sender: "You"
+      }
+    ]
+  },
+  {
+    userId: 3,
+    name: "Jane Smith",
+    phone: "345-678-9012",
+    email: "jane.smith@example.com",
+    chats: [
+      {
+        message: "Can you send the report?",
+        timestamp: "2023-06-17T09:10:00Z",
+        sender: "Jane Smith"
+      },
+      {
+        message: "Yes, I'll send it over shortly.",
+        timestamp: "2023-06-17T09:12:00Z",
+        sender: "You"
+      },
+      {
+        message: "Great, thanks!",
+        timestamp: "2023-06-17T09:13:00Z",
+        sender: "Jane Smith"
+      },
+      {
+        message: "You're welcome!",
+        timestamp: "2023-06-17T09:14:00Z",
+        sender: "You"
+      },
+      {
+        message: "Could you also include the presentation slides?",
+        timestamp: "2023-06-17T09:15:00Z",
+        sender: "Jane Smith"
+      },
+      {
+        message: "Sure, I'll send those too.",
+        timestamp: "2023-06-17T09:16:00Z",
+        sender: "You"
+      }
+    ]
+  },
+  {
+    userId: 4,
+    name: "Michael Brown",
+    phone: "456-789-0123",
+    email: "michael.brown@example.com",
+    chats: [
+      {
+        message: "Thanks!",
+        timestamp: "2023-06-17T11:30:00Z",
+        sender: "Michael Brown"
+      },
+      {
+        message: "You're welcome!",
+        timestamp: "2023-06-17T11:31:00Z",
+        sender: "You"
+      },
+      {
+        message: "How was your weekend?",
+        timestamp: "2023-06-17T11:32:00Z",
+        sender: "Michael Brown"
+      },
+      {
+        message: "It was relaxing. How about yours?",
+        timestamp: "2023-06-17T11:33:00Z",
+        sender: "You"
+      },
+      {
+        message: "Busy, but good!",
+        timestamp: "2023-06-17T11:34:00Z",
+        sender: "Michael Brown"
+      },
+      {
+        message: "Glad to hear it!",
+        timestamp: "2023-06-17T11:35:00Z",
+        sender: "You"
+      }
+    ]
+  },
+  {
+    userId: 5,
+    name: "Emily Davis",
+    phone: "567-890-1234",
+    email: "emily.davis@example.com",
+    chats: [
+      {
+        message: "Let’s catch up later.",
+        timestamp: "2023-06-16T16:45:00Z",
+        sender: "Emily Davis"
+      },
+      {
+        message: "Sure, sounds good.",
+        timestamp: "2023-06-16T16:46:00Z",
+        sender: "You"
+      },
+      {
+        message: "How about dinner tomorrow?",
+        timestamp: "2023-06-16T16:47:00Z",
+        sender: "Emily Davis"
+      },
+      {
+        message: "That works for me!",
+        timestamp: "2023-06-16T16:48:00Z",
+        sender: "You"
+      },
+      {
+        message: "Great, see you then!",
+        timestamp: "2023-06-16T16:49:00Z",
+        sender: "Emily Davis"
+      },
+      {
+        message: "Looking forward to it!",
+        timestamp: "2023-06-16T16:50:00Z",
+        sender: "You"
+      }
+    ]
+  },
+  {
+    userId: 6,
+    name: "David Wilson",
+    phone: "678-901-2345",
+    email: "david.wilson@example.com",
+    chats: [
+      {
+        message: "What do you think about this?",
+        timestamp: "2023-06-15T20:05:00Z",
+        sender: "David Wilson"
+      },
+      {
+        message: "I think it's great!",
+        timestamp: "2023-06-15T20:06:00Z",
+        sender: "You"
+      },
+      {
+        message: "Should we proceed?",
+        timestamp: "2023-06-15T20:07:00Z",
+        sender: "David Wilson"
+      },
+      {
+        message: "Yes, let's move forward.",
+        timestamp: "2023-06-15T20:08:00Z",
+        sender: "You"
+      },
+      {
+        message: "I'll send you the details shortly.",
+        timestamp: "2023-06-15T20:09:00Z",
+        sender: "David Wilson"
+      },
+      {
+        message: "Thank you!",
+        timestamp: "2023-06-15T20:10:00Z",
+        sender: "You"
+      }
+    ]
+  },
+  {
+    userId: 7,
+    name: "Sarah Johnson",
+    phone: "789-012-3456",
+    email: "sarah.johnson@example.com",
+    chats: [
+      {
+        message: "I’ll be there at 5.",
+        timestamp: "2023-06-14T08:00:00Z",
+        sender: "Sarah Johnson"
+      },
+      {
+        message: "Perfect, see you then.",
+        timestamp: "2023-06-14T08:01:00Z",
+        sender: "You"
+      },
+      {
+        message: "Do you need anything?",
+        timestamp: "2023-06-14T08:02:00Z",
+        sender: "Sarah Johnson"
+      },
+      {
+        message: "No, I'm all set. Thanks!",
+        timestamp: "2023-06-14T08:03:00Z",
+        sender: "You"
+      },
+      {
+        message: "Alright, see you soon!",
+        timestamp: "2023-06-14T08:04:00Z",
+        sender: "Sarah Johnson"
+      },
+      {
+        message: "Take care!",
+        timestamp: "2023-06-14T08:05:00Z",
+        sender: "You"
+      }
+    ]
+  },
+  {
+    userId: 8,
+    name: "Chris Lee",
+    phone: "890-123-4567",
+    email: "chris.lee@example.com",
+    chats: [
+      {
+        message: "Can we reschedule?",
+        timestamp: "2023-06-13T12:45:00Z",
+        sender: "Chris Lee"
+      },
+      {
+        message: "Sure, what time works for you?",
+        timestamp: "2023-06-13T12:46:00Z",
+        sender: "You"
+      },
+      {
+        message: "How about Thursday morning?",
+        timestamp: "2023-06-13T12:47:00Z",
+        sender: "Chris Lee"
+      },
+      {
+        message: "That works for me.",
+        timestamp: "2023-06-13T12:48:00Z",
+        sender: "You"
+      },
+      {
+        message: "See you then!",
+        timestamp: "2023-06-13T12:49:00Z",
+        sender: "Chris Lee"
+      },
+      {
+        message: "Looking forward to it.",
+        timestamp: "2023-06-13T12:50:00Z",
+        sender: "You"
+      }
+    ]
+  }
 ];
 export const orders = [
   {

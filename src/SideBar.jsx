@@ -32,7 +32,7 @@ export default function SideBar({sideBar, setSideBar}) {
           <li><NavLink to='/categories'><CategoryIcon/> <span> Categories</span></NavLink></li>
           <li><NavLink to='/brands'><TbBrandSentry/> <span> Brands</span></NavLink></li>
           <hr/>
-          <li><NavLink to='/comments'><FaRegComments/> <span> Comments</span></NavLink></li>
+          <li><NavLink to='/chat'><FaRegComments/> <span> Chats</span></NavLink></li>
           <li><NavLink to='/orders'><IoAnalyticsSharp/> <span> Orders</span></NavLink></li>
           <hr/>
         </ul> 

@@ -7,17 +7,14 @@
   display: flex;
   gap: 30px;
 }
-.dashboard .top .holder .chart {
-  width: 45%;
-}
 .apexcharts-legend-text{
   color: var(--paragraph) !important;
 }
 .dashboard .top .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 20px;
-  width: 55%;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
 }
 .dashboard .top .card {
   background: var(--section-color);
@@ -38,21 +35,25 @@
   gap: 7px;
 }
 .dashboard .top .card:nth-child(1) .icon svg,
+.dashboard .top .card:nth-child(1) p span,
 .dashboard .top .card:nth-child(1) .CircularProgressbar-path {
   color: #f47560;
   stroke: #f47560 !important;
 }
 .dashboard .top .card:nth-child(2) .icon svg ,
+.dashboard .top .card:nth-child(2) p span,
 .dashboard .top .card:nth-child(2) .CircularProgressbar-path {
   color: #1f77b4;
   stroke: #1f77b4 !important;
 }
 .dashboard .top .card:nth-child(3) .icon svg ,
+.dashboard .top .card:nth-child(3) p span,
 .dashboard .top .card:nth-child(3) .CircularProgressbar-path {
   color: #7fc97f;
   stroke: #7fc97f !important;
 }
 .dashboard .top .card:nth-child(4) .icon svg ,
+.dashboard .top .card:nth-child(4) p span,
 .dashboard .top .card:nth-child(4) .CircularProgressbar-path {
   color: #f1e15b;
   stroke: #f1e15b !important;
@@ -63,7 +64,6 @@
 .dashboard .top .card .text svg {
   color: white;
   font-size: 40px;
-  margin-bottom: 5px;
   transform: translateX(-9px);
 }
 .dashboard .top .card:first-child svg {
@@ -84,7 +84,6 @@
 .dashboard .top .card p span {
   font-size: 18px;
   font-weight: 700;
-  color: #fa587d;
 }
 
 .CircularProgressbar-path {
@@ -101,6 +100,85 @@ body.light .CircularProgressbar-trail {
 .CircularProgressbar-text {
   fill: var(--text-color) !important ;
   transform: translateY(1px);
+}
+
+.dashboard .bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 22px;
+  height: 456px;
+  gap: 20px;
+}
+.dashboard .bottom > div {
+  width: 24.2%;
+  padding: 27px;
+  border-radius: 7px;
+  background: var(--section-color);
+}
+.dashboard .bottom h3 {
+  font-size: 16px;
+  text-transform: capitalize;
+  margin-bottom: -36px;
+}
+.dashboard .bottom > div > div {
+  height: 370px !important; 
+}
+.dashboard .bottom .catChart ul {
+  display: grid;
+  gap: 28px;
+  row-gap: 6px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  margin-top: -20px;
+}
+.dashboard .bottom .catChart li {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  padding-left: 15px;
+  font-weight: 500;
+}
+.dashboard .bottom .catChart li span:first-child {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8.5px;
+  height: 8.5px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+.dashboard .bottom .catChart li h4 {
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: var(--paragraph);
+}
+.dashboard .bottom .catChart li span:last-child {
+  color: var(--paragraph);
+}
+.dashboard .bottom .typeChart {
+  width: 37%;
+  height: 100%;
+  padding: 27px 0;
+}
+.dashboard .bottom .typeChart h3 {
+  margin-bottom: -20px;
+  margin-left: 27px;
+}
+.dashboard .bottom .typeChart > div {
+  height: 440px !important;
+  width: 100%;
+}
+.dashboard .bottom .brandChart {
+  width: 37%;
+  height: 100%;
+  padding: 27px;
+}
+.dashboard .bottom div.brandChart > div {
+  width: 112%; 
+}
+.dashboard .bottom .brandChart h3 {
+  margin-bottom: 25px;
 }
 
 

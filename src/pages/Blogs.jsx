@@ -5,6 +5,7 @@ import { blogs } from '../components/data';
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import ReactPaginate from 'react-paginate';
+import { paragraph } from '../Methods';
 
 export default function Blogs() {
   const fields = ['image', 'title', 'body', 'actions'];
@@ -20,13 +21,13 @@ export default function Blogs() {
       case 'title':
         return (
           <div className="title">
-            <h3>{blog.title}</h3>
+            <h3>{paragraph(blog.title, 45)}</h3>
           </div>
         );
       case 'body':
         return (
           <div className="body">
-            <p>{blog.details}</p>
+            <p>{paragraph(blog.details, 95)}</p>
           </div>
         );
       case 'actions':
