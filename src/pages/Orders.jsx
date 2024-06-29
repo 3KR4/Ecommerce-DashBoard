@@ -7,6 +7,7 @@ import { FaEye } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { IoClose } from 'react-icons/io5';
+import { allContext } from '../AllContext';
 
 const paymentColors = {
   'PayPal': '#2a84ff',
@@ -23,6 +24,7 @@ export default function Orders() {
   const fields = ['customer', 'total items', 'total price', 'payment', 'shipping', 'status', 'date', 'actions'];
   const [openModel, setOpenModel] = useState(false);
   const [order, setOrder] = useState({});
+  const { openDeleteModel } = allContext();
   
   // Pagination state
   const [currentItems, setCurrentItems] = useState([]);
@@ -69,9 +71,9 @@ export default function Orders() {
               setOrder(purchase);
             }}/>
             |
-            <FiEdit/>
-            |
-            <RiDeleteBin6Line/>
+            <RiDeleteBin6Line onClick={() => {
+              openDeleteModel('order', 1)
+            }}/>
           </div>
         );
       default:

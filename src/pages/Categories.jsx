@@ -6,9 +6,11 @@ import {categories} from '../components/data'
 
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { allContext } from '../AllContext';
 
 export default function Categories () {
-  
+  const { openDeleteModel } = allContext();
+
   return (
     <div className='categories-page container'>
       <div className="head">
@@ -23,7 +25,9 @@ export default function Categories () {
               
                 <div className="actions">
                   <Link to={`/categories/create?edit=${category.id}`}><FiEdit/></Link>|
-                  <RiDeleteBin6Line/>
+                  <RiDeleteBin6Line onClick={() => {
+                    openDeleteModel('categorie', 1)
+                  }}/>
                 </div>
             </div>
             <ul>

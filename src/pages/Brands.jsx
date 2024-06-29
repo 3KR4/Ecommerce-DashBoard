@@ -6,9 +6,11 @@ import { brands } from '../components/data'
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa6";
+import { allContext } from '../AllContext';
 
 export default function Brands() {
   const [ activeBrand, setActiveBrand] = useState('')
+  const { openDeleteModel } = allContext();
 
   return (
     <div className='brands-page container'>
@@ -23,7 +25,9 @@ export default function Brands() {
                 <img src={brand.img} alt="" />
                   <div className="actions">
                     <Link to={`/brands/create?edit=${brand.id}`}><FiEdit/></Link>|
-                    <RiDeleteBin6Line/>
+                    <RiDeleteBin6Line onClick={() => {
+                      openDeleteModel('brand', 1)
+                    }}/>
                   </div>
               </div>
               <ul>

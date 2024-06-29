@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useTheme } from './ThemeContext'; // Import useTheme hook
+import { allContext } from './AllContext'; // Import allContext hook
 import logo from './img/logo.png';
 import { HiBars3 } from 'react-icons/hi2';
 import { FaAngleDown } from 'react-icons/fa';
@@ -8,7 +8,7 @@ import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 
 export default function Header({ setSideBar }) {
-  const { theme, toggleTheme } = useTheme(); // Use useTheme hook to get theme and toggleTheme
+  const { theme, toggleTheme } = allContext(); // Use allContext hook to get theme and toggleTheme
 
   return (
     <div className='header'>

@@ -308,7 +308,7 @@ const CreateProducts = () => {
 
           {/* CATEGORY */}
           <div className="rowHolder">
-            <div className={`selectHolder ${selectChange.brand !== 'Choose' ? 'active' : ''}`} onClick={() => toggleselectOpen('brand')}>
+            <div className={`select-holder ${selectChange.brand !== 'Choose' ? 'active' : ''}`} onClick={() => toggleselectOpen('brand')}>
               <div className="holder">
                 <h4>Brand:</h4> 
                 <span className="span">{selectChange.brand} <FaAngleDown className={selectOpen.brand ? 'open' : ''}/></span>
@@ -326,7 +326,7 @@ const CreateProducts = () => {
                   </span>
                 )}
             </div>
-            <div className={`selectHolder ${selectChange.category !== 'Choose' ? 'active' : ''}`} onClick={() => toggleselectOpen('category')}>
+            <div className={`select-holder ${selectChange.category !== 'Choose' ? 'active' : ''}`} onClick={() => toggleselectOpen('category')}>
             <div className="holder">
               <h4>Category:</h4> 
               <span className="span">{selectChange.category} <FaAngleDown className={selectOpen.category ? 'open' : ''}/></span>
@@ -343,7 +343,7 @@ const CreateProducts = () => {
                   </span>
                 )}
             </div>
-            <div className={`selectHolder ${selectChange.type !== 'Choose' ? 'active' : ''}`} onClick={() => { if (selectChange.category !== 'Choose') {
+            <div className={`select-holder ${selectChange.type !== 'Choose' ? 'active' : ''}`} onClick={() => { if (selectChange.category !== 'Choose') {
               toggleselectOpen('type');
             }}}>
               <div className="holder">

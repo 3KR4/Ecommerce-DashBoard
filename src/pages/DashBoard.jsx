@@ -4,10 +4,10 @@ import { cardsData } from "../components/data";
 import { CircularProgressbar } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import ReactECharts from 'echarts-for-react';
-import { useTheme } from '../ThemeContext';
+import { allContext } from '../AllContext';
 
 export default function DashBoard() {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = allContext();
   const labelColor = theme == 'dark' ? '#bfbfbf' : '#696969';
   const colors = ['#5470c6', '#91cc75', '#fac858', '#ee6666', '#73c0de', '#3ba272'];
   
@@ -94,7 +94,7 @@ export default function DashBoard() {
     {
       name: 'Nightingale Chart',
       type: 'pie',
-      radius: [35, 170],
+      radius: [30, 160],
       center: ['50%', '50%'],
       roseType: 'area',
       itemStyle: {
@@ -117,8 +117,7 @@ export default function DashBoard() {
       ]
     }
   ]
-};
-
+  };
   return (
     <div className='dashboard container'>
       <div className="top">
@@ -168,6 +167,9 @@ export default function DashBoard() {
           <h3>Top Sales Brand</h3>
           <ReactECharts option={brandSales} />
         </div>
+      </div>
+      <div className="tables">
+        
       </div>
     </div>
   )

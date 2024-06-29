@@ -12,6 +12,11 @@
   padding: 0 12px;
   transform: translateY(-5px);
 }
+.head .holder {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .megaMenu,
 .brands {
   gap: 18px;
@@ -51,22 +56,18 @@
 }
 .title .actions {
   display: flex;
+  gap: 4px;
   transform: translateX(10px);
 }
 .title .actions svg {
-  width: 30px;
-  height: 30px;
-  padding: 6px;
   cursor: pointer;
-  border-radius: 50%;
+  font-size: 18px;
 }
 .title .actions svg:first-child:hover {
-  color: rgb(229, 229, 229);
-  background: #3085d6 !important;
+  color: #3085d6 !important;
 }
 .title .actions svg:last-child:hover {
-  color: rgb(229, 229, 229);
-  background: #ce3431;
+  color: #ce3431;
 }
 .title::after {
   content: "";

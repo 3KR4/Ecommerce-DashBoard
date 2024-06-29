@@ -3,9 +3,14 @@
   overflow: auto;
   border-radius: 6px;
   box-shadow: 0 0 5px 0px #525252;
+  position: relative;
+  z-index: 1;
 }
 .show-data table {
   width: 100%;
+}
+.head:has(.select.active) + .table {
+  z-index: -1;
 }
 .show-data .table th {
   padding: 25px 0 !important;
@@ -172,11 +177,7 @@
   transform: translateY(2px);
 }
 .show-data.purchases svg:first-child:hover {
-  color: #28ae4a;
-}
-.show-data .actions a svg:hover,
-.show-data.purchases svg:nth-child(2):hover {
-  color: #3085d6 !important;
+  color: #3085d6;
 }
 .show-data .actions svg:last-child:hover {
   color: #ce3431;
@@ -237,6 +238,88 @@
 
 
 
+.model .top {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.model .top > div {
+  padding: 15px 20px;
+  border-radius: 5px;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  background: var(--section-color);
+}
+.model .top h3 {
+  margin-bottom: 2px;
+  color: var(--main-color);
+}
+.model .top .row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-color);
+}
+.model .top div h4 span {
+  color: var(--paragraph);
+  margin-left: 2px;
+}
+.purchases .model .holder.container {
+  width: fit-content;
+  display: flex;
+  gap: 11px;
+}
+.model .secondTitle {
+  margin-top: 12px;
+}
+.model .modelTable {
+  overflow: auto;
+  box-shadow: none;
+  max-height: 280px;
+}
+.model .modelTable::-webkit-scrollbar {
+  height: 5px !important;
+  width: 5px;
+}
+.model table thead td {
+  border-top: 1px solid var(--border-color);
+}
+.model table td {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  text-align: center;
+}
+.model table td:last-child {
+  border-right: 1px solid var(--border-color);
+}
+.model table thead td {
+  font-weight: 500;
+  text-transform: capitalize;
+  color: var(--text-color);
+  padding: 16px;
+  min-width: 140px;
+}
+.model table tbody td {
+  font-weight: 500;
+  color: var(--paragraph);
+  padding: 0 16px;
+}
+.model table td img {
+  width: 68px;
+}
+.model table .price {
+  width: unset;
+}
+.model table tbody td .price,
+.model table tbody td .category {
+  width: max-content;
+  margin: 0 auto;
+}
+
+
+
+
 @media (max-width: 1500px) {
   .show-data.purchases .table tr::before {
     right: 8px !important;
@@ -271,6 +354,32 @@
   .show-data ul {
     transform: translateX(10px);
   }
+  .head {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 18px;
+    position: relative;
+  }
+  .head a {
+    position: absolute;
+    right: 0;
+    top: -9px;
+    height: 47px;
+  }
+  .head .filters,
+  .head .holder {
+    width: 100%;
+  }
+  head .searchInputHolder,
+  .head .select-holder {
+    width: 51%;
+  }
+  .select-holder .select {
+    left: -10px;
+  }
+  .show-data.purchases .table td {
+    padding: 19px 20px !important;
+  }
 }
 
 @media (max-width:786px) {
@@ -279,5 +388,20 @@
   }
   .show-data .table td:first-child {
     padding: 10px;
+  }
+  .show-data .filters {
+    flex-direction: column;
+  }
+  .head .select-holder:first-child {
+    width: 100%;
+    height: 48px;
+  }
+  .head a {
+    width: 128px; 
+    height: 40px;
+    top: -4px;
+  }
+  .show-data.purchases .table td {
+    padding: 12px 20px !important;
   }
 }

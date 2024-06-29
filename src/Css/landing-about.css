@@ -135,9 +135,8 @@ body.light .second_section .card {
 }
 .aboutHolder {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(578px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
   gap: 16px;
-
 }
 .aboutHolder .card  {
   position: relative;
@@ -248,18 +247,30 @@ body.light .second_section .card {
 @media(max-width:768px) { 
   .landing .holder {
     max-width: 100%;
+    gap: 25px;
   }
   .landing .swiper {
     height: 173px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
   }
   .second_section {
-    row-gap: 3px;
-    column-gap: 9px;
+    row-gap: 15px;
+    outline: none;
+    grid-template-columns: repeat(auto-fill, minmax(151px, 1fr));
+  }
+  .second_section .card {
+    height: 130px;
   }
   .second_section .images {
     width: 44%;
   }  
   .swiper-slide img {
     object-fit: cover;
+  }
+  .aboutHolder {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 16px;
   }
 }

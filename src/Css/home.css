@@ -79,6 +79,7 @@
   display: flex;
   align-items: center;
   gap: 9px;
+  width: max-content;
   text-transform: capitalize;
 }
 .dashboard .top .card p span {
@@ -106,28 +107,33 @@ body.light .CircularProgressbar-trail {
   display: flex;
   align-items: center;
   margin-top: 22px;
-  height: 456px;
+
   gap: 20px;
 }
 .dashboard .bottom > div {
-  width: 24.2%;
+  width: 36.8%;
+  max-height: 456px;
   padding: 27px;
   border-radius: 7px;
   background: var(--section-color);
 }
-.dashboard .bottom h3 {
-  font-size: 16px;
-  text-transform: capitalize;
-  margin-bottom: -36px;
+.dashboard .bottom > div:first-child {
+  width: 24.1%;
 }
 .dashboard .bottom > div > div {
   height: 370px !important; 
+}
+.dashboard .bottom h3 {
+  font-size: 18px;
+  text-transform: capitalize;
+  margin-bottom: -36px;
+  letter-spacing: 0.6px;
 }
 .dashboard .bottom .catChart ul {
   display: grid;
   gap: 28px;
   row-gap: 6px;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(139px, 1fr));
   margin-top: -20px;
 }
 .dashboard .bottom .catChart li {
@@ -157,7 +163,6 @@ body.light .CircularProgressbar-trail {
   color: var(--paragraph);
 }
 .dashboard .bottom .typeChart {
-  width: 37%;
   height: 100%;
   padding: 27px 0;
 }
@@ -170,7 +175,6 @@ body.light .CircularProgressbar-trail {
   width: 100%;
 }
 .dashboard .bottom .brandChart {
-  width: 37%;
   height: 100%;
   padding: 27px;
 }
@@ -188,5 +192,16 @@ body.light .CircularProgressbar-trail {
 @media (max-width: 1600px) {
   .dashboard .top .cards {
     grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+  }
+}
+@media (max-width: 992px) {
+  .dashboard .bottom {
+    flex-direction: column;
+  }
+  .dashboard .bottom > div {
+    width: 100% !important;
+  }
+  .dashboard .bottom div.brandChart > div {
+    width: 108%;
   }
 }

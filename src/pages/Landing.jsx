@@ -13,6 +13,7 @@ import { IoClose } from "react-icons/io5";
 import { useForm } from 'react-hook-form';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
+import { allContext } from '../AllContext';
 
 export default function Landing() {
   const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm();
@@ -23,6 +24,8 @@ export default function Landing() {
   const [openModel, setOpenModel] = useState(false);
   const [isFromAbout, setIsFromAbout] = useState(false);
   const [sliceToEdit, setSliceToEdit] = useState(null);
+
+  const { openDeleteModel } = allContext();
 
   useEffect(() => {
     if (sliceToEdit) {
@@ -124,7 +127,9 @@ export default function Landing() {
                     setOpenModel(true);
                     setIsFromAbout(false);
                   }} />|
-                  <RiDeleteBin6Line />
+                  <RiDeleteBin6Line onClick={() => {
+                    openDeleteModel('landingSlide', 1)
+                  }}/>
                 </div>
               </SwiperSlide>
             ))}
@@ -139,7 +144,9 @@ export default function Landing() {
                     setOpenModel(true);
                     setIsFromAbout(false);
                   }} />|
-                  <RiDeleteBin6Line />
+                  <RiDeleteBin6Line onClick={() => {
+                    openDeleteModel('landingSection', 1)
+                  }}/>
                 </div>
               </div>
             ))}
@@ -170,7 +177,9 @@ export default function Landing() {
                     setIsFromAbout(true);
                     setOpenModel(true);
                   }} />|
-                  <RiDeleteBin6Line />
+                  <RiDeleteBin6Line onClick={() => {
+                    openDeleteModel('About', 1)
+                  }}/>
                 </div>
               </h3>
               <div className='details'>

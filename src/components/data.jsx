@@ -584,6 +584,10 @@ export const brands = [
     produce: ["graphic card", "motherboard"]
   },
 ];
+export const sort = [ 
+  ['All Products','price: low to high','price: high to low','name: a to z','name: z to a', 'Top Sales', 'In Stock', 'Out Of Stock',],
+  ['name','type','brand','tag',]
+];
 export const allProducts = [  
   {
     id: 1,

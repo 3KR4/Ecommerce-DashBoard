@@ -647,6 +647,12 @@ form button.remove:hover {
   gap: 20px;
 }
 
+.show-data .filters {
+  display: flex;
+  gap: 10px;
+  transform: translateY(-4px);
+}
+
 /*! ========= main-buttom ========== */
 .main-buttom {
   text-align: center;
@@ -668,49 +674,45 @@ form button.remove:hover {
   background: var(--hover-color);
 }
 /*! ========= Select Option ========== */ 
-.selectHolder {
+.select-holder {
   position: relative;
   cursor: pointer;
-
-  display: flex;
-  gap: 5px;
-  flex-direction: column;
-  width: 50%;
-}
-.selectHolder .holder {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  height: 56px;
-  border-radius: 4px;
+  border-radius: 3px;
   background: var(--section-color);
   box-shadow: 0px 0px 20px #00000012;
+  min-width: min-content;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  width: 350px;
 }
-.selectHolder h4 {
+.addProductPage .select-holder .holder {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 54px;
+}
+.select-holder h4 {
   font-size: 14px;
-  color: var(--paragraph);
-  padding: 13px 8px 13px 19px;
+  color: var(--text-color);
+  padding: 13px 8px 13px 15px;
 }
-.selectHolder .span { 
+.select-holder span { 
   position: relative;
-  color: var(--paragraph);
+  color: var(--text-color);
   text-transform: capitalize;
   flex: 1;
   display: flex;
   justify-content: space-between;
-  padding-right: 15px;
+  padding-right: 7px;
   font-size: 15px;
 }
-.selectHolder.active span {
-  color: var(--text-color);
-}
-.selectHolder .span svg {
+.select-holder span svg {
   transform: translateY(3px);
   margin-left: 5px;
   transition: 0.3s;
 }
-.selectHolder .span::before {
+.select-holder span::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -720,39 +722,31 @@ form button.remove:hover {
   height: 18px;
   background-color: var(--main-color);
 }
-.selectHolder .select {
+.select-holder .select {
   position: absolute;
-  top: 60px;
+  top: 49px;
   left: 0;
   z-index: 1;
   width: 100%;
-  padding: 10px 18px;
+  padding: 11px 16px;
   border-radius: 0 0 4px 4px;
   z-index: -1;
   opacity: 0;
   transition: 0.3s;
-  max-height: 225px;
-  overflow: auto;
   background: var(--section-color);
   box-shadow: rgba(0, 0, 0, 0.6) 0 10px 30px;
 }
-.selectHolder .select::-webkit-scrollbar {
-  width: 0.45rem;
-  height: 1px !important;
+.addProductPage .select-holder .select {
+  top: 53px;
 }
-.selectHolder .select::-webkit-scrollbar-thumb {
-  border-radius: 10px 0 0 10px;
-  height: 3px;
-}
-.selectHolder .select.active {
-  top: 56px;
+.select-holder .select.active {
   opacity: 1;
   z-index: 4;
 }
-.selectHolder:has(.select) .holder::before  {
+.select-holder .select::before {
   content: '';
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 50%;
   width: 0%;
   height: 2px;
@@ -760,25 +754,81 @@ form button.remove:hover {
   background: var(--main-color);
   transform: translateX(-50%);
 }
-.selectHolder:has(.select.active) .holder::before {
+.select-holder .select.active::before {
   width: 100%;
 }
-.selectHolder .select li {
+.select-holder .select .holder {
+  position: relative;
+  display: flex;
+  gap: 20px;
+}
+.select-holder .select .holder hr {
+  width: 2px;
+  height: 0px;
+  transition: 0.5s;
+  background: var(--main-color);
+}
+.select-holder .select.active .holder hr {
+  height: 106px;
+}
+.select-holder .select li {
   font-size: 15px;
   cursor: pointer;
-  transition: margin 0.3s;
+  transition: 0.3s;
   padding: 4px 0;
   letter-spacing: 0.4px;
   text-transform: capitalize;
 }
-.selectHolder .select li:hover,
-.selectHolder .select li.active {
+.select-holder .select li:hover,
+.select-holder .select li.active {
   color: var(--main-color);
-  font-weight: 700;
 }
-.selectHolder .select li:hover {
-  margin-left: 5px;
+.searchInputHolder .inputHolder input {
+  height: 48px;
 }
+.searchInputHolder .inputHolder h6.placeHolder {
+  left: 40px;
+}
+.searchInputHolder .inputHolder h6.placeHolder {
+  top: 15px;
+}
+
+
+
+
+.searchInputHolder {
+  display: flex;
+  border-radius: 3px;
+  background: var(--section-color);
+}
+.show-data .searchInputHolder .inputHolder {
+  width: 225px;
+}
+.searchInputHolder .select-holder span {
+  padding: 0 10px 0 16px;
+}
+.searchInputHolder .select-holder span::before {
+  left: 0;
+  height: 18px;
+}
+.searchInputHolder .select-holder {
+  width: 125px;
+}
+.searchInputHolder .select-holder .select {
+  top: 47px;
+}
+.searchInputHolder .select-holder .select::before{
+  height: 1px;
+}
+.searchInputHolder .inputHolder input {
+  padding: 1px 12px 0 40px; 
+}
+.searchInputHolder .inputHolder input:not(:placeholder-shown),
+.searchInputHolder .inputHolder input:focus {
+  padding: 14px 12px 0 40px;
+}
+
+
 /*! ========= signBtns ========== */
 .signBtns {
   display: flex;
@@ -837,9 +887,10 @@ form button.remove:hover {
   overflow: hidden;
 }
 .main-content {
-  max-height: 100vh;
   overflow: auto;
   flex: 1;
+  max-height: 100.6vh;
+  padding-bottom: 20px;
 }
 .header {
   padding: 7px 25px;
@@ -1093,7 +1144,7 @@ body.light .sidebar li:first-child  {
   z-index: -1;
 }
 .model.active {
-  z-index: 5;
+  z-index: 6;
   background: rgba(0, 0, 0, 0.392);
 }
 .model.active .holder {
@@ -1120,83 +1171,31 @@ body.light .sidebar li:first-child  {
   color: white !important;
   background: #ce3431;
 }
-.purchases .model .holder.container {
-  width: fit-content;
+
+.model.delete .holder {
   display: flex;
-  gap: 11px;
+  gap: 8px;
 }
-.model .top {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+.model.delete .holder p {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  margin-bottom: 2px;
 }
-.model .top > div {
-  padding: 15px 20px;
-  border-radius: 5px;
+.model.delete .ptns {
   display: flex;
-  gap: 6px;
-  flex-direction: column;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 3px;
+}
+.model.delete .ptns button:first-child {
   background: var(--section-color);
 }
-.model .top h3 {
-  margin-bottom: 2px;
-  color: var(--main-color);
+.model.delete .ptns button:last-child {
+  background: #ce3431;
 }
-.model .top .row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--text-color);
-}
-.model .top div h4 span {
-  color: var(--paragraph);
-  margin-left: 2px;
-}
-.model .secondTitle {
-  margin-top: 12px;
-}
-.model .modelTable {
-  overflow: auto;
-  box-shadow: none;
-  max-height: 280px;
-}
-.model .modelTable::-webkit-scrollbar {
-  height: 5px !important;
-  width: 5px;
-}
-.model table thead td {
-  border-top: 1px solid var(--border-color);
-}
-.model table td {
-  border-bottom: 1px solid var(--border-color);
-  border-left: 1px solid var(--border-color);
-  text-align: center;
-}
-.model table td:last-child {
-  border-right: 1px solid var(--border-color);
-}
-.model table thead td {
-  font-weight: 500;
-  text-transform: capitalize;
-  color: var(--text-color);
-  padding: 16px;
-  min-width: 140px;
-}
-.model table tbody td {
-  font-weight: 500;
-  color: var(--paragraph);
-  padding: 0 16px;
-}
-.model table td img {
-  width: 68px;
-}
-.model table .price {
-  width: unset;
-}
-.model table tbody td .price,
-.model table tbody td .category {
-  width: max-content;
-  margin: 0 auto;
+.model.delete .ptns button:hover {
+  background: var(--main-color);
 }
 
 
@@ -1261,6 +1260,9 @@ body.light .sidebar li:first-child  {
 }
 
 @media(max-width:992px) {
+  .container {
+    width: 97%;
+  }
   .header {
     padding: 7px 17px;
   }
@@ -1294,6 +1296,9 @@ body.light .sidebar li:first-child  {
   }
 }
 @media(max-width:786px) {
+  .container {
+    width: 100%;
+  }
   .header {
     margin-bottom: 15px;
     justify-content: flex-start;

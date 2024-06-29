@@ -1,17 +1,19 @@
 import '../Css/showData.css';
 import React, { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import { allProducts, brands } from '../components/data';
+import { allProducts, brands, sort } from '../components/data';
 import { Rating } from '@mui/material';
 import { salePrice, under10Nums } from "../Methods";
 import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import ReactPaginate from 'react-paginate';
+import { FaAngleDown, FaSearch } from 'react-icons/fa';
+import { allContext } from '../AllContext';
 
 export default function Products() {
+  const { openDeleteModel } = allContext();
   const fields = ['name', 'Images', 'price', 'category', 'reviews', 'brand', 'purchased', 'stock', 'actions'];
   
-
   const renderProductInfo = (product, field) => {
     let brand = brands.find((x) => x.id === product.brand.toLowerCase()) || { id: product.brand, img: null };
     switch (field) {
@@ -83,7 +85,9 @@ export default function Products() {
           <div className="actions">
             <Link to={`/products/create?edit=${product.id}`}><FiEdit/></Link>
             |
-            <RiDeleteBin6Line/>
+            <RiDeleteBin6Line onClick={() => {
+              openDeleteModel('product', 1)
+            }}/>
           </div>
         );
       default:
@@ -105,11 +109,97 @@ export default function Products() {
     window.scrollTo(0, 0);
     };
 
+
+    const [openProductsSort, setopenProductsSort] = useState({
+      sort: false,
+      search: false,
+    });
+
+    const [productsSort, setProductsSort] = useState({
+      sort: 'All Products',
+      search: 'name',
+    });
+
+    const toggleProductsSort = (menu) => {
+      setopenProductsSort(prevState => ({
+        ...prevState,
+        sort: menu === 'sort' ? !prevState['sort'] : false,
+        search: menu === 'search' ? !prevState['search'] : false,
+      }));
+    };
+
+    const handleShowChange = (key, value) => {
+      setProductsSort(prevState => ({
+        ...prevState,
+        [key]: value
+      }));
+    };
+
+
+
+
   return (
     <div className='show-data container'>
       <div className="head">
         <h2 className="sectionTitle">All Products</h2>
-        <Link className='main-buttom' to='/products/create'>Create Product</Link>
+        <div className='holder'>
+          <div className="filters">
+            <div className="select-holder" onClick={() =>
+              toggleProductsSort('sort') 
+            }>
+            <h4>Sort by:</h4> 
+              <span>{productsSort.sort} <FaAngleDown className={openProductsSort.sort && 'open'}/></span>
+              <div className={`select ${openProductsSort.sort? 'active' : ''}`}>
+                <li key='default' onClick={() => {
+                  handleShowChange('sort', 'All Products');
+                }} value='All Products'>All Products</li>
+                <div className='holder'>
+                  <ul>
+                    {sort[0].slice(1,5).map((x) => (
+                      <li key={x} onClick={() => {
+                        handleShowChange('sort', x);
+                      }} value={x}>{x}</li>
+                    ))}
+                  </ul>
+                  <hr />
+                  <ul>
+                    {sort[0].slice(5,8).map((x) => (
+                      <li key={x} onClick={() => {
+                        handleShowChange('sort', x);
+                      }} value={x}>State: {x}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="searchInputHolder">
+              <div className='inputHolder'>
+                <h6 className="placeHolder" onClick={() => document.getElementById('chatSearchInput').focus()}>Search...</h6>
+                <div className="holder">
+                  <FaSearch />
+                  <input
+                    type="text"
+                    id='chatSearchInput'
+                    placeholder="Search..."
+                  />
+                </div>
+              </div>
+              <div className="select-holder" onClick={() =>
+              toggleProductsSort('search') 
+            }>
+              <span>By: {productsSort.search} <FaAngleDown className={openProductsSort.search && 'open'}/></span>
+                <ul className={`select ${openProductsSort.search? 'active' : ''}`}>
+                  {sort[1].map((x) => (
+                    <li key={x} onClick={() => {
+                      handleShowChange('search', x);
+                    }} value={x}>{x}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <Link className='main-buttom' to='/products/create'>Create Product</Link>
+        </div>
       </div>
       <div className="table">
         <table>

@@ -6,8 +6,10 @@ import { FiEdit } from "react-icons/fi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import ReactPaginate from 'react-paginate';
 import { paragraph } from '../Methods';
+import { allContext } from '../AllContext';
 
 export default function Blogs() {
+  const { openDeleteModel } = allContext();
   const fields = ['image', 'title', 'body', 'actions'];
 
   const renderBlogInfo = (blog, field) => {
@@ -35,7 +37,9 @@ export default function Blogs() {
           <div className="actions">
             <Link to={`/blogs/create?edit=${blog.id}`}><FiEdit /></Link>
             |
-            <RiDeleteBin6Line />
+            <RiDeleteBin6Line onClick={() => {
+              openDeleteModel('blog', 1)
+            }}/>
           </div>
         );
       default:
